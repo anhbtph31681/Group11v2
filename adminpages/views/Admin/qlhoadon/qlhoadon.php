@@ -38,7 +38,7 @@
                     <th>ID khuyến mãi</th>
                     <th>Trạng thái</th>
                     <th>
-                    <a href="index.php?act=addhd"><button name="add">THÊM MỚI</button></a>
+                    
                     </th>
                   </tr>
                   
@@ -64,7 +64,7 @@
                     <td>' . $trang_thai . '</td>
                     <td>
                     <a href="'.$suahd.'"><input type="button" class="button" value="Sửa"></a>  
-                    <a href=""><input type="button" class="button" value="Xóa"></a>
+                    <a href="'.$xoahd.'"><input type="button" class="button" value="Xóa"></a>
                     </td>
                 </tr>';
                   }

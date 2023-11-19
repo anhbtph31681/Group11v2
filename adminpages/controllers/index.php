@@ -150,22 +150,15 @@
             }
             $hoadon = getall_hoadon();
             include "../../views/Admin/qlhoadon/qlhoadon.php";
-            // $list_bai_viet = loadAll_bai_viet();
-            // include "admin/qlbaiviet";
-            // break;
-            // case 'addhd':
-            //     if (isset($_POST["themmoi"]) && ($_POST["themmoi"])) {
-            //         $id_khachang = $_POST['idkhachhang'];
-            //         $id = $_POST['id'];
-            //         $ngay_dat = $_POST['ngaydat'];
-            //         $tong_hoa_don = $_POST['tonghoadon'];
-            //         $id_km = $_POST['idkm'];
-            //         $trang_thai = $_POST['trangthai'];
-            //     update_hoa_don($id, $id_khachhang, $ngay_dat, $tong_hoa_don, $id_km, $trang_thai);
-            // }
-            //     $list_bai_viet = loadAll_bai_viet();
-            //     include "../../views/Admin/qlhoadon/qlhoadon.php";  
-            //     break; 
+            break;
+            case 'xoahd':
+                if (isset($_GET['id']) && ($_GET['id'] > 0)) {
+                    $id = $_GET['id'];
+                    delete_hoa_don($id);
+                }
+                $hoadon = getall_hoadon();
+                include "../../views/Admin/qlhoadon/qlhoadon.php";
+                break; 
             case'sanpham':
                 include "sanpham/sanpham.php";
                 break;
