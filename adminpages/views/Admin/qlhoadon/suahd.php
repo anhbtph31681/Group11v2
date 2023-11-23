@@ -23,8 +23,16 @@ if(is_array($sua_hd)){
             <input type="text" class="form-control" name="id_kh"  value="<?php echo $id_khachhang ?>" readonly>
           </div>
           <div class="form-group">
+            <label for="exampleInputEmail1">ID Sản phẩm</label>
+            <input type="text" class="form-control" name="id_sanpham"  value="<?php echo $id_sanpham ?>" >
+          </div>
+          <div class="form-group">
             <label for="exampleInputPassword1">Ngày đặt</label>
             <input type="date" class="form-control" name="ngay_dat"  value="<?php echo $ngay_dat ?>" >
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword1">Số lượng</label>
+            <input type="number" class="form-control" name="soluong"  value="<?php echo $soluong ?>" >
           </div>
           <div class="form-group">
             <label for="exampleInputFile">Tổng hóa đơn</label>
@@ -38,7 +46,7 @@ if(is_array($sua_hd)){
             <label for="exampleInputFile">Trạng thái</label>
              <input type="text" class="form-control" name="status"  placeholder="0:chưa duyệt. 1: Đã duyệt" value="<?php echo $trang_thai ?>"> 
           </div> 
-          <input type="hidden" name="id" value="<?php echo $id ?>">
+          <input type="hidden" name="id_hoadon" value="<?php echo $id_hoadon ?>">
         </div>
         <!-- /.card-body -->
         

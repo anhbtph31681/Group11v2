@@ -47,10 +47,10 @@
                     }else{
                       $trang_thai = "Đã duyệt";
                     }
-                    $suabv = "index.php?act=suabv&id=" . $id;
-                    $xoabv = "index.php?act=xoabv&id=" . $id;
+                    $suabv = "index.php?act=suabv&id_baiviet=" . $id_baiviet;
+                    $xoabv = "index.php?act=xoabv&id_baiviet=" . $id_baiviet;
                     echo '<tr>
-                    <td>' . $id . '</td>
+                    <td>' . $id_baiviet . '</td>
                     <td>' . $tieu_de. '</td>
                     <td>' . $noi_dung . '</td>
                     <td>' . $ngay_dang . '</td>

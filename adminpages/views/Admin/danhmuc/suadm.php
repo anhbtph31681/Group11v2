@@ -26,7 +26,7 @@ if(is_array($one_danh_muc)){
             <label for="exampleInputFile">Trạng thái</label>
              <input type="text" class="form-control" name="trang_thai"  placeholder="0:chưa duyệt. 1: Đã duyệt" value="<?php echo $trang_thai ?>"> 
           </div> 
-          <input type="hidden" name="id" value="<?php echo $id ?>">
+          <input type="hidden" name="id_danhmuc" value="<?php echo $id_danhmuc ?>">
         </div>
         <!-- /.card-body -->
         

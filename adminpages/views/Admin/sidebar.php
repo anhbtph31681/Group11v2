@@ -77,12 +77,7 @@
                   <p>Quản lý hóa đơn</p>
                 </a>
               </li>
-              <li class="nav-item">
-                <a href="index.php?act=cthoadon" class="nav-link">
-                <i class="nav-icon fas fa-th"></i>
-                  <p>Chi tiết hóa đơn</p>
-                </a>
-              </li>
+             
               <li class="nav-item">
                 <a href="index.php?act=baiviet" class="nav-link">
                 <i class="nav-icon fas fa-th"></i>

@@ -6,24 +6,24 @@
 // hàm load tất cả bv
 function loadAll_danh_muc()
 {
-    $sql = "SELECT * FROM danhmuc_sp order by id desc";
+    $sql = "SELECT * FROM danhmuc_sp order by id_danhmuc desc";
     $list = pdo_query($sql);
     return $list;
 }
 // lấy 1 hóa đơn theo id
-function loadOne_danh_muc($id)
+function loadOne_danh_muc($id_danhmuc)
 {
-    $sql = "SELECT * FROM danhmuc_sp where id='$id' ";
+    $sql = "SELECT * FROM danhmuc_sp where id_danhmuc='$id_danhmuc' ";
     $listOne = pdo_query_one($sql);
     return $listOne;
 }
-function update_danh_muc($id, $tendanhmuc,$trangthai)
+function update_danh_muc($id_danhmuc, $tendanhmuc,$trangthai)
 {
-    $sql = "UPDATE danhmuc_sp SET ten_danh_muc = '$tendanhmuc', trang_thai = '$trangthai' Where id ='$id'";
+    $sql = "UPDATE danhmuc_sp SET ten_danh_muc = '$tendanhmuc', trang_thai = '$trangthai' Where id_danhmuc ='$id_danhmuc'";
     pdo_execute($sql);
 }
-function delete_danh_muc($id){
-    $sql = "DELETE FROM danhmuc_sp Where id ='$id'";
+function delete_danh_muc($id_danhmuc){
+    $sql = "DELETE FROM danhmuc_sp Where id_danhmuc ='$id_danhmuc'";
     pdo_execute($sql);
 }
 // thêm bài viết

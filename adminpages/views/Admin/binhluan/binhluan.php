@@ -53,9 +53,9 @@
                     }else{
                       $trang_thai = "Đã duyệt";
                     }
-                    $xoabl = "index.php?act=xoabl&id=" . $id;
+                    $xoabl = "index.php?act=xoabl&id_binhluan=" . $id_binhluan;
                     echo '<tr>
-                    <td>' . $id . '</td>
+                    <td>' . $id_binhluan . '</td>
                     <td>' . $id_khachhang. '</td>
                     <td>' . $id_sanpham . '</td>
                     <td>' . $noi_dung . '</td>

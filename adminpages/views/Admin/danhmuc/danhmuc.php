@@ -46,10 +46,10 @@
                     }else{
                       $trang_thai = "Đã duyệt";
                     }
-                    $suabv = "index.php?act=suadm&id=" . $id;
-                    $xoabv = "index.php?act=xoadm&id=" . $id;
+                    $suabv = "index.php?act=suadm&id_danhmuc=" . $id_danhmuc;
+                    $xoabv = "index.php?act=xoadm&id_danhmuc=" . $id_danhmuc;
                     echo '<tr>
-                    <td>' . $id . '</td>
+                    <td>' . $id_danhmuc . '</td>
                     <td>' . $ten_danh_muc. '</td>
                     <td>' . $trang_thai . '</td>
                     <td style="text-align:center;">

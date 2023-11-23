@@ -34,7 +34,7 @@ if(is_array($one_bai_viet)){
             <label for="exampleInputFile">Trạng thái</label>
              <input type="text" class="form-control" name="trang_thai"  placeholder="0:chưa duyệt. 1: Đã duyệt" value="<?php echo $trang_thai ?>"> 
           </div> 
-          <input type="hidden" name="id" value="<?php echo $id ?>">
+          <input type="hidden" name="id_baiviet" value="<?php echo $id_baiviet ?>">
         </div>
         <!-- /.card-body -->
         
