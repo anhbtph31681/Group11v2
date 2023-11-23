@@ -5,6 +5,8 @@
      include "../../model/AdminModel/danhmuc.php";
      include "../../model/AdminModel/binhluan.php";
      include "../../model/AdminModel/cthoadon.php";
+     include "../../model/AdminModel/lienhe.php";
+     include "../../model/AdminModel/khuyenmai.php";
      if (isset($_GET['act'])) {
         $act = $_GET['act'];
         switch ($act){
@@ -72,8 +74,51 @@
 
 
              case'khuyenmai':
+                $list_km= loadAll_km();
                 include "khuyenmai/khuyenmai.php";
                 break;
+            case 'suakm':
+                    if (isset($_GET['id_km'])) {
+                        $id_km = $_GET['id_km'];
+                        $one_km = loadOne_km($id_km);
+                    }
+                    include "../../views/Admin/khuyenmai/suakm.php";
+                    break;
+            case 'updatekm';
+                    if (isset($_POST["sua"]) && ($_POST["sua"])) {
+                        $idkm = $_POST['id_km'];
+                        $phantramkm = $_POST['phan_tram_km'];
+                        $ngaybatdau = $_POST['ngay_bat_dau'];
+                        $ngayketthuc = $_POST['ngay_ket_thuc'];
+                        $trangthai = $_POST['trang_thai'];
+                        update_km($idkm, $phantramkm, $ngaybatdau, $ngayketthuc, $trangthai);
+                    }
+                    $list_km = loadAll_km();
+                    include "../../views/Admin/khuyenmai/khuyenmai.php";
+                   
+                    break;
+            case 'xoakm':
+                    if (isset($_GET['id_km']) && ($_GET['id_km'] > 0)) {
+                        $id_km = $_GET['id_km'];
+                        delete_km($id_km);
+                    }
+                    $list_km = loadAll_km();
+                    include "../../views/Admin/khuyenmai/khuyenmai.php";
+                    break;
+            case 'formaddkm':
+                        include "../../views/Admin/khuyenmai/themkm.php";
+                        break;
+            case 'addkm':
+                        if (isset($_POST["themmoi"]) && ($_POST["themmoi"])) {
+                            $phantramkm = $_POST["phantramkm"];
+                            $ngaybatdau = $_POST["ngaybatdau"];
+                            $ngayketthuc = $_POST["ngayketthuc"];     
+                            $trangthai = $_POST["trangthai"];
+                            insert_km($phantramkm, $ngaybatdau, $ngayketthuc, $trangthai);
+                        }
+                        $list_km = loadAll_km();
+                        include "../../views/Admin/khuyenmai/khuyenmai.php";  
+                        break;                
 
                 case'cthoadon':
                     $hoadon = getall_hoadon1();
@@ -134,8 +179,17 @@
 
 
             case'lienhe':
+                $list_lienhe= loadAll_lienhe();
                 include "lienhe/lienhe.php";
                 break;
+            case 'xoalh':
+                    if (isset($_GET['id_lienhe']) && ($_GET['id_lienhe'] > 0)) {
+                        $id_lienhe = $_GET['id_lienhe'];
+                        delete_lienhe($id_lienhe);
+                    }
+                    $list_lienhe = loadAll_lienhe();
+                    include "../../views/Admin/lienhe/lienhe.php";
+          
 
             case'qlhoadon':
                 $hoadon = getall_hoadon();

@@ -32,34 +32,40 @@
                   <thead>
                   <tr>
                     <th>ID</th>
-                    <th>Mã khuyến mãi</th>
                     <th>% giảm giá</th>
                     <th>Ngày bắt đầu</th>
                     <th>Ngày kết thúc</th>
-                    <td>Trạng thái</td>
-                    <th>
-                      
+                    <th>Trạng thái</th>
+                    <th style="text-align:center;">
+                    <a href="index.php?act=formaddkm"> <button type="submit" name="add">Thêm </button> </a>
                     </th>
                   </tr>
                   
 
                   </thead>
-                  <tbody>
-                    <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                  
-                    <td>
-                      <a href="#"> <button type="submit" name="edit">Sửa</button> </a>
-                      <a href="#"> <button type="submit" name="delete">Xóa</button> </a>
+                  <?php
+                  foreach ($list_km as $list) {
+                    extract($list);
+                    if($trang_thai == 0){
+                      $trang_thai = "offline";
+                    }else{
+                      $trang_thai = "online";
+                    }
+                    $suakm = "index.php?act=suakm&id_km=" . $id_km;
+                    $xoakm = "index.php?act=xoakm&id_km=" . $id_km;
+                    echo '<tr>
+                    <td>' . $id_km . '</td>
+                    <td>' . $phan_tram_km. '</td>
+                    <td>' . $ngay_bat_dau . '</td>
+                    <td>' . $ngay_ket_thuc . '</td>
+                    <td>' . $trang_thai . '</td>
+                    <td style="text-align:center;">
+                    <a href="'.$suakm.'"><input type="button" class="button" value="Sửa"></a>  
+                    <a href="' .$xoakm .'"><input type="button" class="button" value="Xóa"></a>
                     </td>
-                    </tr>
-                  </tbody>
-                  </tfoot>
+                </tr>';
+                  }
+                  ?>
                 </table>
               </div>
               <!-- /.card-body -->
@@ -68,7 +74,7 @@
             <!-- /.card -->
           </div>
           <!-- /.col -->
-          <a href="#"> <button type="submit" name="add">Thêm </button> </a>
+         
         </div>
         
         <!-- /.row -->

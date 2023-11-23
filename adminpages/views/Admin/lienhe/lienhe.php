@@ -34,6 +34,8 @@
                     <th>ID</th>
                     <th>ID khách hàng</th>
                     <th>Số điện thoại khách hàng</th>
+                    <th>Email khách hàng</th>
+                    <th>Địa chỉ khách hàng</th>
                     <th>Nội dung liên hệ</th>
                     <th>
                       
@@ -42,18 +44,25 @@
                   
 
                   </thead>
-                  <tbody>
-                    <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    
-                  
+                  <?php
+                  foreach ($list_lienhe as $list) {
+                    extract($list);
+
+                    $xoalh = "index.php?act=xoalh&id_lienhe=" . $id_lienhe;
+                    echo '<tr>
+                    <td>' . $id_lienhe . '</td>
+                    <td>' . $id_khachhang .'</td>
+                    <td>' . $sdt . '</td>
+                    <td>' . $email . '</td>
+                    <td>' . $dia_chi . '</td>
+                    <td>' . $noi_dung . '</td>
                     <td>
-                      <a href="#"> <button type="submit" name="edit">Sửa</button> </a>
-                      <a href="#"> <button type="submit" name="delete">Xóa</button> </a>
+
+                    <a href="'.$xoalh.'"><input type="button" class="button" value="Xóa"></a>
                     </td>
+                </tr>';
+                  }
+                  ?>
                     </tr>
                   </tbody>
                   </tfoot>
