@@ -3,7 +3,7 @@
         <div class="page-index">
           <div class="container">
             <p>
-              Home - Products List
+              Trang chủ - Tất cả sản phẩm
             </p>
           </div>
         </div>
@@ -16,7 +16,7 @@
             <div class="col-md-3">
               <div class="category leftbar">
                 <h3 class="title">
-                  Categories
+                  Danh mục
                 </h3>
                 <ul>
                   <li>
@@ -51,43 +51,7 @@
                   </li>
                 </ul>
               </div>
-              <div class="branch leftbar">
-                <h3 class="title">
-                  Branch
-                </h3>
-                <ul>
-                  <li>
-                    <a href="#">
-                      New
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      Sofa
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      Salon
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      New Trend
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      Living room
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      Bed room
-                    </a>
-                  </li>
-                </ul>
-              </div>
+             
               <div class="price-filter leftbar">
                 <h3 class="title">
                   Price
@@ -240,7 +204,7 @@
                 </h3>
                 <span class="likebutton">
                   <a href="#">
-                    <img src="images/fblike.png" alt="">
+                    <img src="../dist/images/fblike.png" alt="">
                   </a>
                 </span>
                 <p>
@@ -283,14 +247,14 @@
                 <div class="fbplug">
                   <a href="#">
                     <span>
-                      <img src="images/fbicon.png" alt="">
+                      <img src="../dist/images/fbicon.png" alt="">
                     </span>
                     Facebook social plugin
                   </a>
                 </div>
               </div>
               <div class="leftbanner">
-                <img src="images/banner-small-01.png" alt="">
+                <img src="../dist/images/banner-small-01.png" alt="">
               </div>
             </div>
             <div class="col-md-9">
@@ -299,12 +263,12 @@
                   <ul class="slides">
                     <li>
                       <a href="#">
-                        <img src="images/banner-01.jpg" alt=""/>
+                        <img src="../dist/images/banner-01.jpg" alt=""/>
                       </a>
                     </li>
                     <li>
                       <a href="#">
-                        <img src="images/banner-02.jpg" alt=""/>
+                        <img src="../dist/images/banner-02.jpg" alt=""/>
                       </a>
                     </li>
                   </ul>
@@ -316,7 +280,8 @@
                 <div class="toolbar">
                   <div class="sorter">
                     <div class="view-mode">
-                      <a href="?act=sanpham" class="list active">
+                      <a href="?act=sanpham
+                      " class="list active">
                         List
                       </a>
                       <a href="?act=sanpham&actt=girdsanpham" class="grid">

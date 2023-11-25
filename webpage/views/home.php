@@ -1,3 +1,4 @@
+
 <div class="clearfix"></div>
          <div class="hom-slider">
             <div class="container">
@@ -56,6 +57,7 @@
             </div>
          </div>
          <div class="clearfix"></div>
+         
          <div class="container_fullwidth">
             <div class="container">
                <div class="hot-products">
