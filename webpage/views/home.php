@@ -220,3 +220,4 @@
                      </li>
                   </ul>
                </div>
+               <div class="clearfix"></div>

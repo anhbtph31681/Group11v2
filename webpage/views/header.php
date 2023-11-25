@@ -20,7 +20,7 @@
             <div class="container">
                <div class="row">
                   <div class="col-md-2 col-sm-2">
-                     <div class="logo"><a href="index.html"><img src="../dist/images/logo.png" alt="FlatShop"></a></div>
+                     <div class="logo"><a href="index.php"><img src="../dist/images/logo.png" alt="FlatShop"></a></div>
                   </div>
                   <div class="col-md-10 col-sm-10">
                      <div class="header_top">
@@ -58,8 +58,8 @@
                            </div>
                            <div class="col-md-3">
                               <ul class="usermenu">
-                                 <li><a href="checkout.html" class="log">Login</a></li>
-                                 <li><a href="checkout2.html" class="reg">Register</a></li>
+                                 <li><a href="?act=dangnhap" class="log">Login</a></li>
+                                 <li><a href="checkout2.html" class="reg"></a></li>
                               </ul>
                            </div>
                         </div>
@@ -71,7 +71,7 @@
                               <form><input class="search-submit" type="submit" value=""><input class="search-input" placeholder="Enter your search term..." type="text" value="" name="search"></form>
                            </li>
                            <li class="option-cart">
-                              <a href="#" class="cart-icon">cart <span class="cart_no">02</span></a>
+                              <a href="?act=giohang" class="cart-icon">cart <span class="cart_no">02</span></a>
                               <ul class="option-cart-item">
                                  <li>
                                     <div class="cart-item">
@@ -119,7 +119,7 @@
                                        <li><a href="cart.html">Cart</a></li>
                                        <li><a href="checkout.html">CheckOut</a></li>
                                        <li><a href="checkout2.html">CheckOut2</a></li>
-                                       <li><a href="contact.html">contact</a></li>
+                                       <li><a href="?act=lienhe">Liên hệ</a></li>
                                     </ul>
                                  </div>
                               </li>
@@ -156,7 +156,7 @@
                               <li><a href="productgird.html">kids</a></li>
                               <li><a href="productgird.html">blog</a></li>
                               <li><a href="productgird.html">jewelry</a></li>
-                              <li><a href="contact.html">contact us</a></li>
+                              <li><a href="?act=lienhe">Liên hệ</a></li>
                            </ul>
                         </div>
                      </div>
@@ -164,3 +164,4 @@
                </div>
             </div>
          </div>
+         <div class="clearfix"></div>
