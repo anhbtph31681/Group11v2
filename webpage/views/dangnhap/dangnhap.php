@@ -13,287 +13,119 @@
         <div class="container">
           <div class="row">
             <div class="col-md-3">
-              <div class="special-deal leftbar" style="margin-top:0;">
-                <h4 class="title">
-                  Special 
-                  <strong>
-                    Deals
-                  </strong>
-                </h4>
-                <div class="special-item">
-                  <div class="product-image">
-                    <a href="details.html">
-                      <img src="images/products/thum/products-01.png" alt="">
-                    </a>
-                  </div>
-                  <div class="product-info">
-                    <p>
-                      <a href="details.html">
-                        Licoln Corner Unit
-                      </a>
-                    </p>
-                    <h5 class="price">
-                      $300.00
-                    </h5>
-                  </div>
-                </div>
-                <div class="special-item">
-                  <div class="product-image">
-                    <a href="details.html">
-                      <img src="images/products/thum/products-02.png" alt="">
-                    </a>
-                  </div>
-                  <div class="product-info">
-                    <p>
-                      <a href="details.html">
-                        Licoln Corner Unit
-                      </a>
-                    </p>
-                    <h5 class="price">
-                      $300.00
-                    </h5>
-                  </div>
-                </div>
-                <div class="special-item">
-                  <div class="product-image">
-                    <a href="details.html">
-                      <img src="images/products/thum/products-03.png" alt="">
-                    </a>
-                  </div>
-                  <div class="product-info">
-                    <p>
-                      <a href="details.html">
-                        Licoln Corner Unit
-                      </a>
-                    </p>
-                    <h5 class="price">
-                      $300.00
-                    </h5>
-                  </div>
-                </div>
-              </div>
+       
               <div class="product-tag leftbar">
                 <h3 class="title">
-                  Products 
-                  <strong>
-                    Tags
-                  </strong>
-                </h3>
-                <ul>
-                  <li>
-                    <a href="#">
-                      Lincoln us
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      SDress for Girl
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      Corner
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      Window
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      PG
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      Oscar
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      Bath room
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      PSD
-                    </a>
-                  </li>
-                </ul>
+                  <strong>Hướng dẫn </strong>
+                  <div style="margin-top:25px;">
+                  <div style="margin-top:0px;">
+                    <a href=""><p>Hướng dẫn đăng ký</p></a>
+                  </div>
+                  <div style="margin-top:0px;">
+                    <a href=""><p>Hướng dẫn lấy lại mật khẩu</p></a>
+                  </div>
+                  <div style="margin-top:0px;">
+                    <a href=""><p>Hướng dẫn đổi mật khẩu</p></a>
+                  </div>
+                  <div style="margin-top:0px;">
+                    <a href=""><p>Hướng dẫn cập nhập tài khoản</p></a>
+                  </div>
+                  <div style="margin-top:0px;">
+                    <a href="?act=lienhe"><p>Liên hệ với chúng tôi</p></a>
+                  </div>
+                  </div>
+
               </div>
               <div class="get-newsletter leftbar">
                 <h3 class="title">
-                  Get 
+                  
                   <strong>
-                    newsletter
+                    Để lại email của bạn
                   </strong>
                 </h3>
                 <p>
-                  Casio G Shock Digital Dial Black.
+                  Chúng tôi sẽ hỗ trợ bạn thông qua email bạn để lại.
                 </p>
                 <form>
-                  <input class="email" type="text" name="" placeholder="Your Email...">
-                  <input class="submit" type="submit" value="Submit">
+                  <input class="email" type="text" name="" placeholder="Email">
+                  <input class="submit" type="submit" value="Gửi">
                 </form>
               </div>
-              <div class="fbl-box leftbar">
-                <h3 class="title">
-                  Facebook
-                </h3>
-                <span class="likebutton">
-                  <a href="#">
-                    <img src="images/fblike.png" alt="">
-                  </a>
-                </span>
-                <p>
-                  12k people like Flat Shop.
-                </p>
-                <ul>
-                  <li>
-                    <a href="#">
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                    </a>
-                  </li>
-                </ul>
-                <div class="fbplug">
-                  <a href="#">
-                    <span>
-                      <img src="images/fbicon.png" alt="">
-                    </span>
-                    Facebook social plugin
-                  </a>
-                </div>
-              </div>
+
             </div>
             <div class="col-md-9">
               <div class="checkout-page">
                 <ol class="checkout-steps">
                   <li class="steps active">
                     <a href="checkout.html" class="step-title">
-                      01. checkout opition
+                      Đăng nhập
                     </a>
                     <div class="step-description">
                       <div class="row">
-                        <div class="col-md-6 col-sm-6">
-                          <div class="new-customer">
-                            <h5>
-                              New Customer
-                            </h5>
-                            <label>
-                              <span class="input-radio">
-                                <input type="radio" name="user">
-                              </span>
-                              <span class="text">
-                                I wish to subscribe to the Herbal Store newsletter.
-                              </span>
-                            </label>
-                            <label>
-                              <span class="input-radio">
-                                <input type="radio" name="user">
-                              </span>
-                              <span class="text">
-                                My delivery and billing addresses are the same.
-                              </span>
-                            </label>
-                            <p class="requir">
-                              By creating an account you will be able to shop faste be up to date on an order's status, and keep track of the orders you have previously made.
-                            </p>
-                            <button>
-                              Continue
-                            </button>
-                          </div>
-                        </div>
+     
                         <div class="col-md-6 col-sm-6">
                           <div class="run-customer">
                             <h5>
-                              Rerunning Customer
+                              Thông tin đăng nhập
                             </h5>
                             <form>
-                              <div class="form-row">
-                                <label class="lebel-abs">
-                                  Email 
-                                  <strong class="red">
-                                    *
-                                  </strong>
-                                </label>
-                                <input type="text" class="input namefild" name="">
-                              </div>
-                              <div class="form-row">
-                                <label class="lebel-abs">
-                                  Password 
-                                  <strong class="red">
-                                    *
-                                  </strong>
-                                </label>
-                                <input type="text" class="input namefild" name="">
-                              </div>
-                              <p class="forgoten">
-                                <a href="#">
-                                  Forgoten your password?
-                                </a>
-                              </p>
-                              <button>
-                                Login
+                              
+                           
+                               
+                                <input style="width:360px; " type="text" class="input namefild" name="" placeholder="Tài khoản">
+                             
+                             
+                           
+                                <input style="width:360px; margin-top:10px;"  type="text" class="input namefild" name="" placeholder="Mật khẩu">
+                           
+                              <div style="width:100%; margin-top:10px;display:flex;margin-left:70px;" >
+                              <button  >
+                                Đăng nhập
                               </button>
+                              <p style=" margin-left:40px;margin-top:10px;">
+                                <a href="?act=dangky">
+                                  Đăng ký 
+                                </a> 
+                                <span style="color:#959898;">hoặc</span>
+                                <br>
+                                <a>lấy lại mật khẩu</a>
+                              </p>
+                              </div>
                             </form>
+                          </div>
+                        </div>
+
+                        <div class="col-md-6 col-sm-6">
+                          <div class="new-customer">
+                            <h5>
+                              Thông báo
+                            </h5>
+                            <label>
+                              <span class="input-radio">
+                                <input type="radio" name="user" checked>
+                              </span>
+                              <span class="text">
+                              Mở
+                              </span>
+                            </label>
+                            <label>
+                              <span class="input-radio">
+                                <input type="radio" name="user">
+                              </span>
+                              <span class="text">
+                              Tắt
+                              </span>
+                            </label>
+                            <p >
+                            Mở thông báo để bạn có thể nhận được những thông báo mới từ chúng tôi.
+                            </p>
+                           
                           </div>
                         </div>
                       </div>
                     </div>
                   </li>
-                  <li class="steps">
-                    <a href="checkout2.html" class="step-title">
-                      02. billing information
-                    </a>
-                  </li>
-                  <li class="steps">
-                    <a href="checkout2.html" class="step-title">
-                      03. Shipping information
-                    </a>
-                  </li>
-                  <li class="steps">
-                    <a href="#" class="step-title">
-                      04. shipping method 
-                    </a>
-                  </li>
-                  <li class="steps">
-                    <a href="#" class="step-title">
-                      05. payment information 
-                    </a>
-                  </li>
-                  <li class="steps">
-                    <a href="#" class="step-title">
-                      06. oder review
-                    </a>
-                  </li>
+                  
                 </ol>
               </div>
             </div>

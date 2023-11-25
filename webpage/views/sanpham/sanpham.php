@@ -23,8 +23,8 @@
                   foreach ($list_danh_muc as $list) {
                     extract($list);
                     echo '<li>
-                    <a href="#">
-                      '. $ten_danh_muc .'
+                    <a style="font-weight:bold;" href="#">
+                        '. $ten_danh_muc .'
                     </a>
                   </li>';
                   }
