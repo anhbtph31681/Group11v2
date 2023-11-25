@@ -19,36 +19,16 @@
                   Danh mục
                 </h3>
                 <ul>
-                  <li>
+                <?php
+                  foreach ($list_danh_muc as $list) {
+                    extract($list);
+                    echo '<li>
                     <a href="#">
-                      Men
+                      '. $ten_danh_muc .'
                     </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      Women
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      Salon
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      New Trend
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      Living room
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      Bed room
-                    </a>
-                  </li>
+                  </li>';
+                  }
+                  ?>
                 </ul>
               </div>
              

@@ -1,7 +1,4 @@
-<!-- <?php 
-include_once "../model/pdo.php";
 
-?> -->
 <!DOCTYPE html>
 <html>
    <head>
@@ -126,17 +123,11 @@ include_once "../model/pdo.php";
                                        <div class="col-md-6 col-sm-6">
                                           <ul class="mega-menu-links">
                                           <?php
-                  foreach ($list_danh_muc as $list) {
-                    extract($list);
-                    echo '<li><a href="productgird.html">'. $ten_danh_muc.'</a></li>';
-                  }
-                  ?>
-                                             <li><a href="productgird.html">New Collection</a></li>
-                                             <li><a href="productgird.html">Shirts & tops</a></li>
-                                             <li><a href="productgird.html">Laptop & Brie</a></li>
-                                             <li><a href="productgird.html">Dresses</a></li>
-                                             <li><a href="productgird.html">Blazers & Jackets</a></li>
-                                             <li><a href="productgird.html">Shoulder Bags</a></li>
+                                          foreach ($list_danh_muc as $list) {
+                                                extract($list);
+                                                 echo '<li><a href="?act=sanpham">'. $ten_danh_muc .'</a></li>';
+                                          }
+                                          ?>
                                           </ul>
                                        </div>
                                        <!-- <div class="col-md-6 col-sm-6">

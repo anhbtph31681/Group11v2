@@ -1,7 +1,9 @@
 
 <?php
+    include "../model/pdo.php"; 
     include "../model/user/danhmuc.php";
-
+    $list_danh_muc = loadAll_danh_muc();
+    include "header.php";
     if (isset($_GET['act'])){
         $act = $_GET['act'];
         switch ($act){
@@ -21,14 +23,16 @@
                 include "ctsanpham/ctsanpham.php";
                 break; 
             case 'sanpham':
-                
+                $list_danh_muc = loadAll_danh_muc();
                 include "sanpham/sanpham.php";
                 break; 
         }
       
             
         }else{
-            $list_danh_muc = loadAll_danh_muc();
+            
             include "home.php";
         }
+        include "brand.php"; 
+        include "footer.php";
 ?>
