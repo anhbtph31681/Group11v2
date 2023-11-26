@@ -125,7 +125,7 @@
                                           <?php
                                           foreach ($list_danh_muc as $list) {
                                                 extract($list);
-                                                 echo '<li><a href="?act=sanpham">'. $ten_danh_muc .'</a></li>';
+                                                echo '<li><a href="?act=sanpham">'. $ten_danh_muc .'</a></li>';
                                           }
                                           ?>
                                           </ul>

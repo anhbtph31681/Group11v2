@@ -2,7 +2,7 @@
 <div class="page-index">
           <div class="container">
             <p>
-              Home - CheckOut
+              Trang chủ - Đăng ký
             </p>
           </div>
         </div>
