@@ -7,6 +7,8 @@
      include "../../model/AdminModel/cthoadon.php";
      include "../../model/AdminModel/lienhe.php";
      include "../../model/AdminModel/khuyenmai.php";
+     include "../../model/AdminModel/sanpham.php";
+     include "../../model/AdminModel/nguoidung.php";
      if (isset($_GET['act'])) {
         $act = $_GET['act'];
         switch ($act){
@@ -226,12 +228,88 @@
                 $hoadon = getall_hoadon();
                 include "../../views/Admin/qlhoadon/qlhoadon.php";
                 break; 
+
+
             case'sanpham':
+                $list_san_pham = loadAll_san_pham();
                 include "sanpham/sanpham.php";
                 break;
+               case 'suasp':
+                    if (isset($_GET['id_sanpham'])) {
+                        $id_sanpham = $_GET['id_sanpham'];
+                        $one_san_pham = loadOne_san_pham($id_sanpham); // Assuming you have a function to load a single product
+                    }
+                    include "../../views/Admin/sanpham/suasp.php";
+                    break;
+                
+                    case 'updatesp':
+                        if (isset($_POST["sua"]) && ($_POST["sua"])) {
+                            $uploadDir = "./sanpham/uploads/"; // Specify the path where you want to store uploaded images
+                            $imgPath = $uploadDir . basename($_FILES["img_thumbnail"]["name"]);
+                            move_uploaded_file($_FILES["img_thumbnail"]["tmp_name"], $imgPath);
+                            $id_sanpham = $_POST['id_sanpham'];
+                            $ten_sp = $_POST['ten_sp'];
+                            $ngay_nhap = $_POST['ngay_nhap'];
+                            $mo_ta = $_POST['mo_ta'];
+                            $id_danhmuc = $_POST['id_danhmuc'];
+                            $img_thumbnail = $imgPath;
+                            $trang_thai = $_POST['trang_thai'];
+                            $gia_sanpham = $_POST["gia_sanpham"];
+                           
+                            update_san_pham($id_sanpham, $ten_sp, $ngay_nhap, $mo_ta, $id_danhmuc, $img_thumbnail, $trang_thai, $gia_sanpham);
+                            // header("Location: index.php?act=sanpham");
+                            echo '<script>window.location.href = "index.php?act=sanpham"</script>';
+                            exit();
+                        }
+                        $list_san_pham = loadAll_san_pham();
+                        include "../../views/Admin/sanpham/sanpham.php";
+                        break;
+                
+                case 'xoasp':
+                    if (isset($_GET['id_sanpham']) && ($_GET['id_sanpham'] > 0)) {
+                        $id_sanpham = $_GET['id_sanpham'];
+                        delete_san_pham($id_sanpham); // Assuming you have a function to delete a product
+                    }
+                    $list_san_pham = loadAll_san_pham(); // Assuming you have a function to load all products
+                    include "../../views/Admin/sanpham/sanpham.php";
+                    break;
+                
+                case 'formaddsp':
+                    include "../../views/Admin/sanpham/themsp.php";
+                    break;
+                
+                case 'addsp':
+                    if (isset($_POST["themmoi"]) && ($_POST["themmoi"])) {
+                        $uploadDir = "./sanpham/uploads/"; // Specify the path where you want to store uploaded images
+                        $imgPath = $uploadDir . basename($_FILES["img_thumbnail"]["name"]);
+                        move_uploaded_file($_FILES["img_thumbnail"]["tmp_name"], $imgPath);
+                        $ten_sp = $_POST["ten_sp"];
+                        $ngay_nhap = $_POST["ngay_nhap"];
+                        $mo_ta = $_POST["mo_ta"];
+                        $id_danhmuc = $_POST["id_danhmuc"];
+                        $img_thumbnail = $imgPath;
+                        $trang_thai = $_POST["trang_thai"];
+                        $gia_sanpham = $_POST["gia_sanpham"];
+                        insert_san_pham($ten_sp, $ngay_nhap, $mo_ta, $id_danhmuc, $img_thumbnail, $trang_thai,$gia_sanpham); // Assuming you have a function to insert a product
+                    }
+                    $list_san_pham = loadAll_san_pham(); // Assuming you have a function to load all products
+                    include "../../views/Admin/sanpham/sanpham.php";
+                    break;            
+             
             case'user':
+                $list_nguoi_dung= loadAll_nguoi_dung();
+                // var_dump($list_nguoi_dung);die;
                 include "user/user.php";
-                break;                
+                break; 
+                case 'xoand':
+                    if (isset($_GET['id_khachhang']) && ($_GET['id_khachhang'] > 0)) {
+                        $id_khachhang = $_GET['id_khachhang'];
+                        delete_nguoi_dung($id_khachhang);
+                    }
+                    $list_nguoi_dung = loadAll_nguoi_dung();
+                    // var_dump($list_nguoi_dung);die;
+                    include "../../views/Admin/user/user.php";
+                    break;              
         }
       
             
