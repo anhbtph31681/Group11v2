@@ -68,18 +68,16 @@
                             <h5>
                               Thông tin đăng ký
                             </h5>
-                            <form>
-                                <input style="width:360px;margin-top:10px; " type="text" class="input namefild" name="" placeholder="Tài khoản">
-                                <input style="width:360px; margin-top:10px;"  type="password" class="input namefild" name="" placeholder="Mật khẩu">
-                                <input style="width:360px; margin-top:10px;"  type="Email" class="input namefild" name="" placeholder="Email">
-                                <input style="width:360px; margin-top:10px;"  type="number" class="input namefild" name="" placeholder="Số điện thoại">
-                                <input style="width:360px; margin-top:10px;"  type="text" class="input namefild" name="" placeholder="Địa chỉ">
-                                <input style="width:360px; margin-top:10px;"  type="date" class="input namefild" name="" placeholder="Ngày sinh">
+                            <form  action="index.php?act=dangky" method="post">
+                                <input style="width:340px;margin-top:10px; " type="text" class="input namefild"  id="username" name="username"  placeholder="Tài khoản">
+                                <input style="width:340px; margin-top:10px;"  type="password" class="input namefild" id="password" name="password"  placeholder="Mật khẩu">
+                                <input style="width:340px; margin-top:10px;"  type="text" class="input namefild"id="name" name="name" placeholder="Họ và tên">
+                                <input style="width:340px; margin-top:10px;"  type="Email" class="input namefild" id="email" name="email" placeholder="Email">
+                                <input style="width:340px; margin-top:10px;"  type="text" class="input namefild"id="sdt" name="sdt" placeholder="Số điện thoại">
+                                <input style="width:340px; margin-top:10px;"  type="text" class="input namefild" id="diachi" name="diachi" placeholder="Địa chỉ">
+                                <input style="width:340px; margin-top:10px;"  type="date" class="input namefild" id="ngaysinh" name="ngaysinh"  placeholder="Ngày sinh">
                               <div style="width:100%; margin-top:60px;text-align:center;" >
-                              <button  >
-                                <a href="?act=dangnhap">
-                                Đăng ký</a>
-                              </button>
+                              <input type="submit" name="dangky" class="btn" value="Đăng ký">
                               <p style="margin-top:10px;">
                                 <a href="?act=dangnhap">
                                   < Quay lại trang đăng nhập

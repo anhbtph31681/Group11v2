@@ -1,12 +1,10 @@
-
 <!DOCTYPE html>
 <html>
    <head>
       <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
       <meta name="description" content="">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <link rel="shortcut icon" href="images/favicon.png">images
-      <title>Welcome to FlatShop</title>
+      <link rel="shortcut icon" href="images/favicon.png">
       <link href="../dist/css/bootstrap.css" rel="stylesheet">
       <link href='http://fonts.googleapis.com/css?family=Roboto:400,300,300italic,400italic,500,700,500italic,100italic,100' rel='stylesheet' type='text/css'>
       <link href="../dist/css/font-awesome.min.css" rel="stylesheet">
@@ -49,7 +47,7 @@
                            </div>
                            <div class="col-md-3">
                               <ul class="usermenu">
-                                 <li><a href="?act=dangnhap" class="log">Đăng nhập</a></li>
+                                 <li><a href="?act=formdn" class="log">Đăng nhập</a></li>
                                  <li><a href="checkout2.html" class="reg"></a></li>
                               </ul>
                            </div>
