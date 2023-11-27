@@ -1,4 +1,14 @@
-
+<style>
+.ihihi{
+  color: black;
+  background-color: pink;
+  border-radius: 3px;
+  border:1px solid hotpink;
+}
+.ihihi:hover{
+  transition: all 0,5s;
+}
+</style>
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
     <section class="content-header">
@@ -24,7 +34,7 @@
           <div class="col-12">
             <div class="card">
               <div class="card-header">
-                <h3 class="card-title">DataTable with minimal features & hover style</h3>
+                <h3 class="card-title">Danh sách người dùng</h3>
               </div>
               <!-- /.card-header -->
               <div class="card-body">
@@ -32,45 +42,53 @@
                   <thead>
                   <tr>
                     <th>ID</th>
+                    <th>Họ tên </th>
                     <th>Tên đăng nhập</th>
                     <th>Mật khẩu</th>
                     <th>Email</th>
                     <th>Địa chỉ</th>
                     <th>Số điện thoại</th>
                     <th>Ngày sinh</th>
-                    <th>Ảnh đại diện</th>
-                    <th>Họ tên </th>
+                    <th>Chức vụ</th>
                     <th>
                       
                     </th>
                   </tr>
-                  
-
                   </thead>
-                  <tbody>
-                    <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+                  <?php
+                  foreach ($list_nguoi_dung as $list) {
+                    // var_dump($list);die;
+                    extract($list);
+                    if($chuc_vu == 0){
+                      $chuc_vu = "Clients";
+                    }else{
+                      $chuc_vu = "Admins";
+                    }
+                    // $suabv = "index.php?act=suabv&id_khachhang=" . $id_khachhang; //tu sua cai duong dan theo y minh nhe
+                    $xoand = "index.php?act=xoand&id_khachhang=" . $id_khachhang;
+                    echo '<tr>
+                    <td>' . $id_khachhang . '</td>
+                    <td>' . $ho_ten . '</td>
+                    <td>' . $ten_dang_nhap. '</td>
+                    <td>' . $mat_khau . '</td>
+                    <td>' . $email . '</td>
+                    <td>' . $dia_chi . '</td>
+                    <td>' . $sdt . '</td>
+                    <td>' . $ngay_sinh . '</td>
+                    <td>' . $chuc_vu . '</td>
                     <td>
-                      <a href="#"> <button type="submit" name="edit">Sửa</button> </a>
-                      <a href="#"> <button type="submit" name="delete">Xóa</button> </a>
+                    <a href="' . $xoand . '" ><input type="button" class="ihihi" value="Xóa"></a>
                     </td>
-                    </tr>
-                  </tbody>
+                </tr>';
+                  }
+                  // sua noi dung xoa noi dung la gi day ?sua nguoi dung ma
+                  ?>
                   </tfoot>
                 </table>
               </div>
               <!-- /.card-body -->
                 
             </div>
-            <a href="#"> <button type="submit" name="add">Thêm user</button> </a>
             <!-- /.card -->
           </div>
           <!-- /.col -->
@@ -83,3 +101,5 @@
   </div>
   <!-- /.content-wrapper -->
   
+
+

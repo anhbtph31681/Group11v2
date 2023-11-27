@@ -8,7 +8,7 @@
      include "../../model/AdminModel/lienhe.php";
      include "../../model/AdminModel/khuyenmai.php";
      include "../../model/AdminModel/sanpham.php";
-     include "../../model/AdminModel/nguoidung.php";
+     include "../../model/AdminModel/user.php";
      if (isset($_GET['act'])) {
         $act = $_GET['act'];
         switch ($act){

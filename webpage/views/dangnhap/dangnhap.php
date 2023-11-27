@@ -1,4 +1,17 @@
-
+<?php
+    session_start();
+    ob_start();
+    include "../../model/pdo.php";
+    include "../../model/user/user.php";
+    if((isset($_POST['dangnhap']))&&($_POST['dangnhap'])){
+      $ten_dang_nhap = $_POST['ten_dang_nhap'];
+      $mat_khau = $_POST['mat_khau'];
+      $chuc_vu = checkuser($ten_dang_nhap,$mat_khau);
+      $_SESSION['chuc_vu'] = $chuc_vu;
+      if($chuc_vu == 1) header('location: index.php');
+      else header('location: dangnhap.php'); 
+    }
+?>
 <div class="page-index">
           <div class="container">
             <p>
@@ -68,18 +81,11 @@
                             <h5>
                               Thông tin đăng nhập
                             </h5>
-                            <form>
-                              
-                           
-                               
-                                <input style="width:360px; " type="text" class="input namefild" name="" placeholder="Tài khoản">
-                             
-                             
-                           
-                                <input style="width:360px; margin-top:10px;"  type="text" class="input namefild" name="" placeholder="Mật khẩu">
-                           
+                            <form  action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST">
+                                <input style="width:360px; " type="text" class="input namefild" name="ten_dang_nhap" placeholder="Tài khoản">
+                                <input style="width:360px; margin-top:10px;"  type="text" class="input namefild" name="mat_khau" placeholder="Mật khẩu">
                               <div style="width:100%; margin-top:10px;display:flex;margin-left:70px;" >
-                              <button  >
+                              <button type="submit" name="dangnhap">
                                 Đăng nhập
                               </button>
                               <p style=" margin-left:40px;margin-top:10px;">
@@ -91,7 +97,7 @@
                                 <a>lấy lại mật khẩu</a>
                               </p>
                               </div>
-                            </form>
+                           </form>
                           </div>
                         </div>
 
