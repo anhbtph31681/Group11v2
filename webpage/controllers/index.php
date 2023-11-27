@@ -3,9 +3,11 @@
     include "../model/user/danhmuc.php";
     include "../model/user/dangky.php";
     include "../model/user/dangnhap.php";
+    include "../model/user/sanpham.php";
     session_start();
     ob_start();
     $list_danh_muc = loadAll_danh_muc();
+    $sphome1=loadAll_san_pham();
     include "header.php";
     if (isset($_GET['act'])){
         $act = $_GET['act'];
