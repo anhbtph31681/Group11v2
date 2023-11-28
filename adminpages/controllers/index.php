@@ -255,8 +255,9 @@
                             $img_thumbnail = $imgPath;
                             $trang_thai = $_POST['trang_thai'];
                             $gia_sanpham = $_POST["gia_sanpham"];
+                            $view = $_POST["view"];
                            
-                            update_san_pham($id_sanpham, $ten_sp, $ngay_nhap, $mo_ta, $id_danhmuc, $img_thumbnail, $trang_thai, $gia_sanpham);
+                            update_san_pham($id_sanpham, $ten_sp, $ngay_nhap, $mo_ta, $id_danhmuc, $img_thumbnail, $trang_thai, $gia_sanpham,$view);
                             // header("Location: index.php?act=sanpham");
                             echo '<script>window.location.href = "index.php?act=sanpham"</script>';
                             exit();
@@ -290,7 +291,8 @@
                         $img_thumbnail = $imgPath;
                         $trang_thai = $_POST["trang_thai"];
                         $gia_sanpham = $_POST["gia_sanpham"];
-                        insert_san_pham($ten_sp, $ngay_nhap, $mo_ta, $id_danhmuc, $img_thumbnail, $trang_thai,$gia_sanpham); // Assuming you have a function to insert a product
+                        $view = $_POST['view'];
+                        insert_san_pham($ten_sp, $ngay_nhap, $mo_ta, $id_danhmuc, $img_thumbnail, $trang_thai,$gia_sanpham, $view ); // Assuming you have a function to insert a product
                     }
                     $list_san_pham = loadAll_san_pham(); // Assuming you have a function to load all products
                     include "../../views/Admin/sanpham/sanpham.php";

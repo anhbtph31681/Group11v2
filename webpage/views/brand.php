@@ -1,6 +1,6 @@
 
                <div class="our-brand">
-                  <h3 class="title"><strong>Our </strong> Brands</h3>
+                  <h3 class="title">Thương hiệu <strong>của chúng tôi</strong></h3>
                   <div class="control"><a id="prev_brand" class="prev" href="#">&lt;</a><a id="next_brand" class="next" href="#">&gt;</a></div>
                   <ul id="braldLogo">
                      <li>

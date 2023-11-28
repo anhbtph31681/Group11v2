@@ -1,7 +1,7 @@
 <div class="page-index">
           <div class="container">
             <p>
-              Home - Contact us
+              Trang chủ - Liên hệ
             </p>
           </div>
         </div>
@@ -13,7 +13,7 @@
           <div class="row">
             <div class="col-md-12">
               <h5 class="title contact-title">
-                Contact Us
+                Liên hệ
               </h5>
               <div class="clearfix">
               </div>
@@ -27,10 +27,10 @@
                 <div class="col-md-4">
                   <div class="contact-infoormation">
                     <h5>
-                      Contact Info
+                      Thông tin liên hệ
                     </h5>
                     <p>
-                      Lorem ipsum dolor sit amet, consectetur ad ipis cing elit. Suspendisse at sapien mascsa. Lorem ipsum dolor sit amet, consectetur se adipiscing elit. Sed fermentum, sapien scele risque volutp at tempor, lacus est sodales massa, a hendrerit dolor slase turpis non mi. 
+                    Bản thân khách hàng là rất quan trọng, anh ta sẽ được theo dõi bởi nhà phát triển ips cing. Điện thoại thông minh dành cho nam giới. Khách hàng rất quan trọng, anh ấy sẽ theo đuổi mình với tư cách là khách hàng. Nhưng sự lên men, sự khôn ngoan của sự mạo hiểm mạo hiểm vào thời điểm đó, hồ là một khối của các thành viên, một nỗi đau hendrerit slase turpi không mi.
                     </p>
                     <ul>
                       <li>
@@ -38,9 +38,9 @@
                           <img src="images/message.png" alt="">
                         </span>
                         <p>
-                          contact@michaeldesign.me
+                          contact.flatshop@gmail.com
                           <br>
-                          support@michaeldesign.me
+                          support.flatshop@gmail.com
                         </p>
                       </li>
                       <li>
@@ -58,7 +58,7 @@
                           <img src="images/address.png" alt="">
                         </span>
                         <p>
-                          No.86 ChuaBoc St, DongDa Dt,
+                          Cao đẳng FPT POLYTECHNIC
                           <br>
                           Hanoi, Vietnam
                         </p>
@@ -69,33 +69,14 @@
                 <div class="col-md-8">
                   <div class="ContactForm">
                     <h5>
-                      Contact Form
+                      Để lại lời nhắn cho chúng tôi
                     </h5>
-                    <form>
-                      <div class="row">
-                        <div class="col-md-6">
-                          <label>
-                            Your Name 
-                            <strong class="red">
-                              *
-                            </strong>
-                          </label>
-                          <input class="inputfild" type="text" name="">
-                        </div>
-                        <div class="col-md-6">
-                          <label>
-                            Your Email
-                            <strong class="red">
-                              *
-                            </strong>
-                          </label>
-                          <input class="inputfild" type="email" name="">
-                        </div>
-                      </div>
+                    <form action="?act=lienhe" method="POST">
+                     
                       <div class="row">
                         <div class="col-md-12">
                           <label>
-                            Your Message 
+                            Lời nhắn của bạn 
                             <strong class="red">
                               *
                             </strong>
@@ -105,7 +86,7 @@
                         </div>
                       </div>
                       <button class="pull-right">
-                        Send Message
+                        Gửi
                       </button>
                     </form>
                   </div>

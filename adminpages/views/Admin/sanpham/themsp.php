@@ -45,6 +45,7 @@
                                         <input type="file" name="img_thumbnail" placeholder="Ảnh"><br><br>
                                         Trạng thái
                                         <input type="number" name="trang_thai" min="0" max="1" placeholder="0: Chưa duyệt. 1:Đã duyệt" ><br><br>
+                                        <input type="hidden" name="view" placeholder="View" ><br><br>
                                         <input type="submit" name="themmoi" value="Thêm sản phẩm" class="btn btn-primary"><br><br>
                                     </form>
                                     <a href="index.php?act=sanpham"><input type="button" value="Trở về danh sách" class="btn btn-primary"></a>

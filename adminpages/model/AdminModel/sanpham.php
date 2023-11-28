@@ -19,9 +19,9 @@ function loadOne_san_pham($id_sanpham)
 }
 
 // Function to update a product
-function update_san_pham($id_sanpham, $ten_sp, $ngay_nhap, $mo_ta, $id_danhmuc, $img_thumbnail, $gia_sanpham, $trang_thai)
+function update_san_pham($id_sanpham, $ten_sp, $ngay_nhap, $mo_ta, $id_danhmuc, $img_thumbnail, $gia_sanpham, $trang_thai,$view)
 {
-    $sql = "UPDATE sanpham SET ten_sp = '$ten_sp', ngay_nhap = '$ngay_nhap', mo_ta = '$mo_ta', id_danhmuc = '$id_danhmuc', img_thumbnail = '$img_thumbnail',trang_thai = '$trang_thai', gia_sanpham = '$gia_sanpham'  WHERE id_sanpham ='$id_sanpham'";
+    $sql = "UPDATE sanpham SET ten_sp = '$ten_sp', ngay_nhap = '$ngay_nhap', mo_ta = '$mo_ta', id_danhmuc = '$id_danhmuc', img_thumbnail = '$img_thumbnail',trang_thai = '$trang_thai', gia_sanpham = '$gia_sanpham',view = '$view'  WHERE id_sanpham ='$id_sanpham'";
     pdo_execute($sql);
 }
 
@@ -33,12 +33,12 @@ function delete_san_pham($id_sanpham)
 }
 
 // Function to insert a new product
-function insert_san_pham($ten_sp, $ngay_nhap, $mo_ta, $id_danhmuc, $img_thumbnail, $trang_thai, $gia_sanpham)
+function insert_san_pham($ten_sp, $ngay_nhap, $mo_ta, $id_danhmuc, $img_thumbnail, $trang_thai, $gia_sanpham,$view)
 {
  
 
     // Now, you can insert $imgPath into your database along with other data
-    $sql = "INSERT INTO sanpham VALUES(NULL, '$ten_sp', '$ngay_nhap', '$mo_ta', '$id_danhmuc', '$img_thumbnail', '$trang_thai', '$gia_sanpham')";
+    $sql = "INSERT INTO sanpham VALUES(NULL, '$ten_sp', '$ngay_nhap', '$mo_ta', '$id_danhmuc', '$img_thumbnail', '$trang_thai', '$gia_sanpham','$view')";
 
     pdo_execute($sql);
     

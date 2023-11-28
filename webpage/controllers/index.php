@@ -1,13 +1,16 @@
 <?php
+    session_start();
+    ob_start();
+    // if(!isset($_SESSION['giohang']$_SESSION['giohang'])) $_SESSION['giohang']=[];
     include "../model/pdo.php"; 
     include "../model/user/danhmuc.php";
     include "../model/user/dangky.php";
     include "../model/user/dangnhap.php";
     include "../model/user/sanpham.php";
-    session_start();
-    ob_start();
+   
     $list_danh_muc = loadAll_danh_muc();
     $sphome1=loadAll_san_pham();
+    $sphot=loadAll_hot();
     include "header.php";
     if (isset($_GET['act'])){
         $act = $_GET['act'];
@@ -23,12 +26,67 @@
                 break; 
             case 'sanpham':
                 $list_danh_muc = loadAll_danh_muc();
+                if(!isset($_GET['id_danhmuc'])){
+                    $iddm = 0;
+                   
+                }else{
+                    $iddm = $_GET['id_danhmuc'];
+                }
+                
                 include "sanpham/sanpham.php";
-                break; 
-
+                break;
+             case 'ctcanhan':
+                include "chitietcanhan/ctcanhan.php";
+                break;
+            case 'addcart':
+                if(isset($_POST['addtocart'])&&($_POST['addtocart'])){
+                    $id = $_POST['id_sanpham'];
+                    $img = $_POST['img_thumbnail'];
+                    $tensp = $_POST['ten_sp'];
+                    $mota = $_POST['mo_ta'];
+                    $giasp = $_POST['gia_sanpham'];
+                    $soluong = 1 ;
+                    $fg = 0;
+                    $i=0;
+                    foreach ($_SESSION['giohang'] as $sp) {
+                        if( $sp[2]== $tensp){
+                            $slnew = $soluong + $sp[5];
+                            $_SESSION['giohang'][$i][5] =$slnew;
+                            $fg = 1;
+                            break;
+                        }
+                        $i++;
+                    }
+                    if($fg==0){
+                    $sp = array($id,$img,$tensp,$mota,$giasp,$soluong);
+                    $_SESSION['giohang'][]=$sp;
+                }
+                    header('location: index.php?act=giohang');
+                }
+                // include "giohang/giohang.php";
+                break;
+            case 'delcart':
+                if(isset($_SESSION['giohang'])) unset($_SESSION['giohang']);
+                    header('location: index.php');
+                    break;
+            // case 'deletecart':
+            //     if(isset($_GET['idcart'])) {
+            //         array_splice($_SESSION['giohang'],$_GET['idcart'],1);
+            //         header('Location: '.$_SERVER['HTTP_REFERER']);
+            //         // tham số thứ nhất truyền vào là 1 mảng, tham số thứ 2 là vị trí cần xóa, tham số thứ 3 xóa bao nhiều phần tử
+            //     } else {
+            //         $_SESSION['idcart'] = [];
+            //     }
+                
+            //     break;
+                    
+            case'thanhtoan':
+                include "thanhtoan/thanhtoan.php";
+                break;
 
             case 'dangnhap':
                     if (isset($_POST['dangnhap']) && ($_POST['dangnhap'])) {
+                        $id = $_POST['id_khachhang'];
                         $user = $_POST['ten_dang_nhap'];
                         $password = $_POST['mat_khau'];
                         $checkuser = check_user($user, $password);

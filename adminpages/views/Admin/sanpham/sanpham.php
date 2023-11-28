@@ -39,6 +39,7 @@
                                         <th>DANH MỤC</th>
                                         <th>ẢNH</th>
                                         <th>GIÁ TIỀN</th>
+                                        <th>Lượt xem</th>
                                         <th>TRẠNG THÁI</th>
                                         <th style="text-align:center;"><a href="index.php?act=formaddsp"><button name="add">THÊM MỚI</button></a></th>
                                     </tr>
@@ -59,7 +60,7 @@
                                             <td>' . $id_danhmuc . '</td>
                                             <td><img src="' . $img_thumbnail . '" alt="Product Image" style="wid_sanphamth: 50px; height: 50px;"></td>
                                             <td>' .$gia_sanpham. '</td>
-                                            
+                                            <td>' .$view. '</td>
                                             <td>' . $trang_thai_text . '</td>
                                             <td style="text-align:center;">
                                                 <a href="' . $sua_sp . '"><input type="button" class="button" value="Sửa"></a>

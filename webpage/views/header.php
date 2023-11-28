@@ -46,9 +46,18 @@
                               </ul>
                            </div>
                            <div class="col-md-3">
-                              <ul class="usermenu">
-                                 <li><a href="?act=formdn" class="log">Đăng nhập</a></li>
+                           <ul class="usermenu" style="display:flex;">
+                              <?php
+                                if (isset($_SESSION['tai_khoan'])) {
+                                    extract($_SESSION['tai_khoan']);
+                                ?>
+                                    <div><li><a href="?act=ctcanhan" class="log">Xin chào : <?=$ten_dang_nhap?></a></li></div>
+                                    <div style="margin-left:10px;"><li><a href="index.php?act=thoat" class="log">Đăng xuất</a></li></div>
+                                <?php } else { ?>
+                                 <li><a href="index.php?act=formdn" class="log">Đăng nhập</a></li>
                                  <li><a href="checkout2.html" class="reg"></a></li>
+                                <?php } ?>
+                                
                               </ul>
                            </div>
                         </div>
@@ -60,44 +69,16 @@
                               <form><input class="search-submit" type="submit" value=""><input class="search-input" placeholder="Tìm kiếm" type="text" value="" name="search"></form>
                            </li>
                            <li class="option-cart">
-                              <a href="?act=giohang" class="cart-icon">cart <span class="cart_no">02</span></a>
-                              <ul class="option-cart-item">
-                                 <li>
-                                    <div class="cart-item">
-                                       <div class="image"><img src="../dist/images/products/thum/products-01.png" alt=""></div>
-                                       <div class="item-description">
-                                          <p class="name">Lincoln chair</p>
-                                          <p>Size: <span class="light-red">One size</span><br>Quantity: <span class="light-red">01</span></p>
-                                       </div>
-                                       <div class="right">
-                                          <p class="price">$30.00</p>
-                                          <a href="#" class="remove"><img src="../dist/images/remove.png" alt="remove"></a>
-                                       </div>
-                                    </div>
-                                 </li>
-                                 <li>
-                                    <div class="cart-item">
-                                       <div class="image"><img src="../dist/images/products/thum/products-02.png" alt=""></div>
-                                       <div class="item-description">
-                                          <p class="name">Lincoln chair</p>
-                                          <p>Size: <span class="light-red">One size</span><br>Quantity: <span class="light-red">01</span></p>
-                                       </div>
-                                       <div class="right">
-                                          <p class="price">$30.00</p>
-                                          <a href="#" class="remove"><img src="../dist/images/remove.png" alt="remove"></a>
-                                       </div>
-                                    </div>
-                                 </li>
-                                 <li><span class="total">Total <strong>$60.00</strong></span><button class="checkout" onClick="location.href='checkout.html'">CheckOut</button></li>
-                              </ul>
+                              <a href="?act=giohang" class="cart-icon">cart <span class="cart_no"></span></a>
+                      
                            </li>
                         </ul>
                         <div class="navbar-header"><button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button></div>
                         <div class="navbar-collapse collapse">
                            <ul class="nav navbar-nav">
                               <li class="active dropdown">
-                                 <a href="#" style="border:none;" class="dropdown-toggle" data-toggle="dropdown">Trang chủ</a>
-                                 <div class="dropdown-menu">
+                                 <a href="index.php" style="border:none;" class="dropdown-toggle">Trang chủ</a>
+                                 <!-- <div class="dropdown-menu">
                                     <ul class="mega-menu-links">
                                        <li><a href="index.php">Trang chủ</a></li>
                                        <li><a href="home2.html">home2</a></li>
@@ -110,12 +91,11 @@
                                        <li><a href="checkout2.html">CheckOut2</a></li>
                                        <li><a href="?act=lienhe">Liên hệ</a></li>
                                     </ul>
-                                 </div>
+                                 </div> -->
                               </li>
                               <li><a href="productgird.html">Khuyến mãi</a></li>
-                              <li><a href="productlitst.html">women</a></li>
                               <li class="dropdown">
-                                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">Danh mục</a>
+                                 <a href="?act=sanpham" class="dropdown-toggle" >Danh mục</a>
                                  <div class="dropdown-menu mega-menu">
                                     <div class="row">
                                        <div class="col-md-6 col-sm-6">
@@ -123,7 +103,7 @@
                                           <?php
                                           foreach ($list_danh_muc as $list) {
                                                 extract($list);
-                                                echo '<li><a href="?act=sanpham">'. $ten_danh_muc .'</a></li>';
+                                                echo '<li><a href="?act=sanpham&id_danhmuc='.$id_danhmuc.'">'. $ten_danh_muc .'</a></li>';
                                           }
                                           ?>
                                           </ul>
@@ -141,10 +121,9 @@
                                     </div>
                                  </div>
                               </li>
-                              <li><a href="productgird.html">gift</a></li>
-                              <li><a href="productgird.html">kids</a></li>
-                              <li><a href="productgird.html">blog</a></li>
-                              <li><a href="productgird.html">jewelry</a></li>
+                              <li><a href="?act=sanpham">Sản phẩm</a></li>
+                              <li><a href="productgird.html">Quà tặng</a></li>
+                              <li><a href="productgird.html">Bài viết</a></li>
                               <li><a href="?act=lienhe">Liên hệ</a></li>
                            </ul>
                         </div>

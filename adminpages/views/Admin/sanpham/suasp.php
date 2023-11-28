@@ -1,4 +1,4 @@
-//suasp
+
 <?php
 if(is_array($one_san_pham)){
   extract($one_san_pham);
@@ -26,7 +26,7 @@ if(is_array($one_san_pham)){
             </div>
             <div class="form-group">
                 <label for="exampleInputPassword1">Ngày nhập</label>
-                <input type="text" class="form-control" name="ngay_nhap" value="<?php echo $ngay_nhap ?>" >
+                <input type="date" class="form-control" name="ngay_nhap" value="<?php echo $ngay_nhap ?>" >
             </div>
             <div class="form-group">
                 <label for="exampleInputFile">Mô tả</label>

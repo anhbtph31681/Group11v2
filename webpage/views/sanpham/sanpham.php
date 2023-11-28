@@ -23,7 +23,7 @@
                   foreach ($list_danh_muc as $list) {
                     extract($list);
                     echo '<li>
-                    <a style="font-weight:bold;" href="#">
+                    <a style="font-weight:bold;" href="?act=sanpham&id_danhmuc='.$id_danhmuc.'">
                         '. $ten_danh_muc .'
                     </a>
                   </li>';
@@ -32,152 +32,7 @@
                 </ul>
               </div>
              
-              <div class="price-filter leftbar">
-                <h3 class="title">
-                  Price
-                </h3>
-                <form class="pricing">
-                  <label>
-                    $ 
-                    <input type="number">
-                  </label>
-                  <span class="separate">
-                    - 
-                  </span>
-                  <label>
-                    $ 
-                    <input type="number">
-                  </label>
-                  <input type="submit" value="Go">
-                </form>
-              </div>
-              <div class="clolr-filter leftbar">
-                <h3 class="title">
-                  Color
-                </h3>
-                <ul>
-                  <li>
-                    <a href="#" class="red-bg">
-                      light red
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#" class=" yellow-bg">
-                      yellow"
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#" class="black-bg ">
-                      black
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#" class="pink-bg">
-                      pink
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#" class="dkpink-bg">
-                      dkpink
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#" class="chocolate-bg">
-                      chocolate
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#" class="orange-bg">
-                      orange-bg
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#" class="off-white-bg">
-                      off-white
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#" class="extra-lightgreen-bg">
-                      extra-lightgreen
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#" class="lightgreen-bg">
-                      lightgreen
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#" class="biscuit-bg">
-                      biscuit
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#" class="chocolatelight-bg">
-                      chocolatelight
-                    </a>
-                  </li>
-                </ul>
-              </div>
-              <div class="product-tag leftbar">
-                <h3 class="title">
-                  Products 
-                  <strong>
-                    Tags
-                  </strong>
-                </h3>
-                <ul>
-                  <li>
-                    <a href="#">
-                      Lincoln us
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      SDress for Girl
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      Corner
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      Window
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      PG
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      Oscar
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      Bath room
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      PSD
-                    </a>
-                  </li>
-                </ul>
-              </div>
-              <div class="others leftbar">
-                <h3 class="title">
-                  Others
-                </h3>
-              </div>
-              <div class="others leftbar">
-                <h3 class="title">
-                  Others
-                </h3>
-              </div>
+
               <div class="fbl-box leftbar">
                 <h3 class="title">
                   Facebook
@@ -188,7 +43,7 @@
                   </a>
                 </span>
                 <p>
-                  12k people like Flat Shop.
+                  12k người thích Flat Shop.
                 </p>
                 <ul>
                   <li>
@@ -264,9 +119,7 @@
                       " class="list active">
                         List
                       </a>
-                      <a href="?act=sanpham&actt=girdsanpham" class="grid">
-                        Grid
-                      </a>
+                      
                     </div>
                     <div class="sort-by">
                       Sort by : 
@@ -617,9 +470,8 @@
                       <a href="#" class="list active">
                         List
                       </a>
-                      <a href="productgird.html" class="grid">
-                        Grid
-                      </a>
+                      
+                    
                     </div>
                     <div class="sort-by">
                       Sort by : 
