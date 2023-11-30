@@ -30,4 +30,13 @@ function loadAll_hot()
     
     return $list;
 }?>
-t
+
+
+<?php
+function loadone_sanpham($id_sanpham)
+{
+    $sql = "SELECT * FROM sanpham WHERE id_sanpham='$id_sanpham'";
+    $listOne = pdo_query_one($sql);
+    return $listOne;
+}?>
+

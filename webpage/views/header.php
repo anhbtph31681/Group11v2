@@ -57,7 +57,10 @@
                                  <li><a href="index.php?act=formdn" class="log">Đăng nhập</a></li>
                                  <li><a href="checkout2.html" class="reg"></a></li>
                                 <?php } ?>
-                                
+                                <?php if($chuc_vu==1){ ?>
+                                 <li><a href="../../adminpages/views/Admin" class="log">ADMIN</a></li>
+                                <?php }?>
+                               
                               </ul>
                            </div>
                         </div>

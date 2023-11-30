@@ -1,7 +1,7 @@
 <div class="page-index">
           <div class="container">
             <p>
-              Home - Products Details
+              
             </p>
           </div>
         </div>

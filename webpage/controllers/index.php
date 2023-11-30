@@ -7,23 +7,37 @@
     include "../model/user/dangky.php";
     include "../model/user/dangnhap.php";
     include "../model/user/sanpham.php";
-   
+    include "../model/user/thongtin.php";
+    include "../model/user/thanhtoan.php";
     $list_danh_muc = loadAll_danh_muc();
     $sphome1=loadAll_san_pham();
     $sphot=loadAll_hot();
+    $all_tt = loadAll_tt();
+   
     include "header.php";
     if (isset($_GET['act'])){
         $act = $_GET['act'];
         switch ($act){
             case 'giohang':
                 include "giohang/giohang.php";
-                break;         
+                break;    
+            case 'xoaspgh':
+                if(isset($_GET['idsp']) && ($_GET['idsp']>=0)) {
+                    array_splice($_SESSION['giohang'],$_GET['idsp'],1);
+                }
+                include "giohang/giohang.php";
+                break;       
              case 'lienhe':
                 include "lienhe/lienhe.php";
                 break;   
             case 'ctsanpham':
+                if(isset($_GET['id_sanpham'])){
+                    $id_sanpham =$_GET['id_sanpham'];
+                    $onesp=loadone_sanpham($id_sanpham);// load one thoi k can load all
+                }
+                
                 include "ctsanpham/ctsanpham.php";
-                break; 
+                break;  
             case 'sanpham':
                 $list_danh_muc = loadAll_danh_muc();
                 if(!isset($_GET['id_danhmuc'])){
@@ -35,9 +49,34 @@
                 
                 include "sanpham/sanpham.php";
                 break;
-             case 'ctcanhan':
+            case 'ctcanhan':
                 include "chitietcanhan/ctcanhan.php";
                 break;
+            case 'suatt':
+                    if (isset($_GET['id_baiviet'])) {
+                        $id_khachhang = $_GET['id_khachhang'];
+                        $one_tt = loadOne_tt($id_khachhang);
+                    }
+                include "chitietcanhan/suatt.php";
+                break;
+            case 'updatett';
+                    if (isset($_POST["sua"]) && ($_POST["sua"])) {
+                        $id_khachhang = $_POST['id_khachhang'];
+                        $ten_dang_nhap = $_POST['ten_dang_nhap'];
+                        $ho_ten = $_POST['ho_ten'];
+                        $ngay_sinh = $_POST['ngay_sinh'];
+                        $sdt = $_POST['sdt'];
+                        $email = $_POST['email'];
+                        $dia_chi = $_POST['dia_chi'];
+                       
+                        
+                        update_tt($id_khachhang, $ten_dang_nhap, $ho_ten,$ngay_sinh , $sdt, $email, $dia_chi );
+                    }
+                    $all_tt = loadAll_tt();
+                    
+                    header('location: index.php?act=thoat');
+                   
+                    break;
             case 'addcart':
                 if(isset($_POST['addtocart'])&&($_POST['addtocart'])){
                     $id = $_POST['id_sanpham'];
@@ -63,39 +102,47 @@
                 }
                     header('location: index.php?act=giohang');
                 }
-                // include "giohang/giohang.php";
+                include "giohang/giohang.php";
                 break;
             case 'delcart':
                 if(isset($_SESSION['giohang'])) unset($_SESSION['giohang']);
                     header('location: index.php');
-                    break;
-            // case 'deletecart':
-            //     if(isset($_GET['idcart'])) {
-            //         array_splice($_SESSION['giohang'],$_GET['idcart'],1);
-            //         header('Location: '.$_SERVER['HTTP_REFERER']);
-            //         // tham số thứ nhất truyền vào là 1 mảng, tham số thứ 2 là vị trí cần xóa, tham số thứ 3 xóa bao nhiều phần tử
-            //     } else {
-            //         $_SESSION['idcart'] = [];
-            //     }
-                
-            //     break;
-                    
+                    break; 
+
             case'thanhtoan':
                 include "thanhtoan/thanhtoan.php";
                 break;
+            case 'addttadmin':
+                        if (isset($_POST["themmoi"]) && ($_POST["themmoi"])) {
+
+                            $id_khachhang = $_POST["id_khachhang"];
+                            $id = $_POST["id_sanpham"];
+                            $ngay_dat = $_POST["ngay_dat"];
+                            $tt = $_POST["tong_hoa_don"];
+                            $soluong = 1;
+                            $id_km = $_POST["id_km"];
+                            $trang_thai = $_POST["trang_thai"];
+                            
+                            insert_adhoadon($id_khachhang,$ngay_dat,$tt,$id_km,$trang_thai,$id,$soluong );
+                        }
+                        getall_hoadon();
+                        include "../views/thanhtoan/thanhtoan.php";  
+                        break;
 
             case 'dangnhap':
                     if (isset($_POST['dangnhap']) && ($_POST['dangnhap'])) {
-                        $id = $_POST['id_khachhang'];
+                        
                         $user = $_POST['ten_dang_nhap'];
                         $password = $_POST['mat_khau'];
+                        
                         $checkuser = check_user($user, $password);
                         if (is_array($checkuser)) {
                             $_SESSION['tai_khoan'] = $checkuser;
                             $thongbao = 'đăng nhập thành công';
+                            
                             header('Location:  index.php');
                         } else {
-                            echo $thongbao = '<script>alert("Tài khoản không tồn tại ");</script>';
+                            echo $thongbao = '<script>alert("Tài khoản hoặc mật khẩu không đúng! ");</script>';
                             include "dangnhap/dangnhap.php";
                             
                         }

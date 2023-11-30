@@ -65,17 +65,20 @@
                   <div class="control"><a id="prev_hot" class="prev" href="#">&lt;</a><a id="next_hot" class="next" href="#">&gt;</a></div>
                   <ul id="hot">
                      <li>
+                        
                         <div class="row">
                            <?php 
                                foreach ($sphot as $sph) {
                                  extract($sph);
+                             
+                                
                                  echo '
                                  <form action="?act=addcart" method="POST">
                                  <div class="col-md-3 col-sm-6">
                                  <div class="products">
                                  
                                     <div class="offer">'.$sph['view'].'</div>
-                                    <div ><a href="details.html"><img style="width:343px;" src="../../adminpages/views/Admin/'.$sph['img_thumbnail'].'" alt="Product Name"></a></div>
+                                    <div ><a href="?act=ctsanpham&id_sanpham='.$id_sanpham.'"><img style="width:343px;" src="../../adminpages/views/Admin/'.$sph['img_thumbnail'].'" alt="Product Name"></a></div>
                                     <div class="productname">'.$sph['ten_sp'].'</div>
                                     <h4 class="price">'.$sph['gia_sanpham'].' VND</h4>
                                     <div class="button_group"><input class="button add-cart" type="submit" name="addtocart" value="Thêm giỏ hàng"><button class="button compare" type="button"><i class="fa fa-exchange"></i></button><button class="button wishlist" type="button"><i class="fa fa-heart-o"></i></button></div>
@@ -83,10 +86,10 @@
                                  </div>
                               </div>
                               <input class="button" type="hidden" name="id_sanpham" value="'.$sph['id_sanpham'].'">
-                            <input class="button" type="hidden" name="img_thumbnail" value="'.$sph['img_thumbnail'].'">
-                            <input class="button" type="hidden" name="ten_sp" value=" '.$sph['ten_sp'].'">
-                            <input class="button" type="hidden" name="mo_ta" value="'.$sph['mo_ta'].'">
-                            <input class="button" type="hidden" name="gia_sanpham" value="'.$sph['gia_sanpham'].'">
+                              <input class="button" type="hidden" name="img_thumbnail" value="'.$sph['img_thumbnail'].'">
+                              <input class="button" type="hidden" name="ten_sp" value=" '.$sph['ten_sp'].'">
+                              <input class="button" type="hidden" name="mo_ta" value="'.$sph['mo_ta'].'">
+                              <input class="button" type="hidden" name="gia_sanpham" value="'.$sph['gia_sanpham'].'">
                               </form>';
                                }
                            ?>
