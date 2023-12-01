@@ -32,6 +32,8 @@ function loadAll_hot()
 }?>
 
 
+
+
 <?php
 function loadone_sanpham($id_sanpham)
 {

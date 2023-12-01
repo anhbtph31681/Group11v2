@@ -126,7 +126,7 @@
                               </li>
                               <li><a href="?act=sanpham">Sản phẩm</a></li>
                               <li><a href="productgird.html">Quà tặng</a></li>
-                              <li><a href="productgird.html">Bài viết</a></li>
+                              <li><a href="index.php?act=formbaiviet">Bài viết</a></li>
                               <li><a href="?act=lienhe">Liên hệ</a></li>
                            </ul>
                         </div>

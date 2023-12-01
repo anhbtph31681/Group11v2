@@ -13,3 +13,17 @@ function loadAll_danh_muc()
     
     return $list;
 }?>
+
+<?php
+function load_ten_danhmuc($id_danhmuc)
+{
+    if ($id_danhmuc > 0) {
+        $sql = "SELECT * FROM danhmuc_sp where id_danhmuc = ".$id_danhmuc;
+        $list_danh_muc = pdo_query_one($sql);
+        extract($list_danh_muc);
+        return $ten_danh_muc;
+    } else {
+        return '';
+    }
+}
+?>

@@ -9,6 +9,8 @@
     include "../model/user/sanpham.php";
     include "../model/user/thongtin.php";
     include "../model/user/thanhtoan.php";
+    include "../model/user/baiviet.php";
+    include "../model/user/lienhe.php";
     $list_danh_muc = loadAll_danh_muc();
     $sphome1=loadAll_san_pham();
     $sphot=loadAll_hot();
@@ -18,6 +20,10 @@
     if (isset($_GET['act'])){
         $act = $_GET['act'];
         switch ($act){
+            case 'formbaiviet': 
+                $dsbv = loadAll_bai_viet();
+                include "baiviet/baiviet.php";
+                break;
             case 'giohang':
                 include "giohang/giohang.php";
                 break;    
@@ -28,6 +34,14 @@
                 include "giohang/giohang.php";
                 break;       
              case 'lienhe':
+                if (isset($_POST["submitcontact"]) && ($_POST["submitcontact"])) {
+                    $id_khachhang = $_POST["id_khachhang"];
+                    $noi_dung = $_POST["noi_dung"];
+                    $trang_thai = $_POST["trang_thai"];
+                    submitcontact($id_khachhang, $noi_dung,$trang_thai);
+                    
+                }
+                echo $thongbao = '<script>alert("Gửi thành công!");</script>';
                 include "lienhe/lienhe.php";
                 break;   
             case 'ctsanpham':
@@ -39,15 +53,19 @@
                 include "ctsanpham/ctsanpham.php";
                 break;  
             case 'sanpham':
-                $list_danh_muc = loadAll_danh_muc();
-                if(!isset($_GET['id_danhmuc'])){
-                    $iddm = 0;
-                   
-                }else{
-                    $iddm = $_GET['id_danhmuc'];
+                if (isset($_POST['kyw']) && $_POST['kyw'] != '') {
+                    $kyw = $_POST['kyw'];
+                } else {
+                    $kyw = '';
                 }
-                
-                include "sanpham/sanpham.php";
+                if (isset($_GET['id_danhmuc']) && $_GET['id_danhmuc'] > 0) {
+                    $iddm = $_GET['id_danhmuc'];
+                } else {
+                    $iddm = 0;
+                }
+                $listsp = loadAll_san_pham($kyw, $iddm);
+                $tendm = load_ten_danhmuc($iddm);
+                include "sanpham/sanpham.php";            
                 break;
             case 'ctcanhan':
                 include "chitietcanhan/ctcanhan.php";
@@ -138,7 +156,7 @@
                         $checkuser = check_user($user, $password);
                         if (is_array($checkuser)) {
                             $_SESSION['tai_khoan'] = $checkuser;
-                            $thongbao = 'đăng nhập thành công';
+                            echo $thongbao = '<script>alert(" Đăng nhập thành công! ");</script>';
                             
                             header('Location:  index.php');
                         } else {
@@ -172,7 +190,7 @@
                     $email = $_POST['email'];
                     $diachi = $_POST['diachi'];
                     insert_nguoidung($ten_dang_nhap, $mat_khau, $ho_ten, $ngay_sinh, $sdt, $email, $diachi);
-                    $thongbao = '<script>alert("Đăng ký tài khoản thành công");</script>';
+                    echo $thongbao = '<script>alert("Đăng ký tài khoản thành công");</script>';
                 }
                
                 include "dangnhap/dangnhap.php";

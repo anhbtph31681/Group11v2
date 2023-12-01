@@ -135,9 +135,9 @@
                 </div>
                   <tr>
                     <td colspan="6">
-                    <button class="pull-left">
+                    <div style="float:right;background: #fff;padding: 10px 20px; border: 1px solid #cccccc;font-size: 14px;-webkit-border-radius: 10px;border-radius: 10px;outline: none;" class="pull-left">
                         <a href="index.php" >Tiếp tục mua hàng</a>
-                      </button>
+                      </div>
 
                     
                       <button>

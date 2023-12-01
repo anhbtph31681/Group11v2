@@ -1,3 +1,7 @@
+<?php
+if(is_array($onesp)){
+  extract($onesp);
+}?>
 <div class="page-index">
           <div class="container">
             <p>
@@ -12,118 +16,78 @@
         <div class="container">
           <div class="row">
             <div class="col-md-9">
-              <div class="products-details">
-                <div class="preview_image">
-                  <div class="preview-small">
-                    <img id="zoom_03" src="../dist/images/products/medium/products-01.jpg" data-zoom-image="images/products/Large/products-01.jpg" alt="">
-                  </div>
-                  <div class="thum-image">
-                    <ul id="gallery_01" class="prev-thum">
-                      <li>
-                        <a href="#" data-image="../dist/images/products/medium/products-01.jpg" data-zoom-image="../dist/images/products/Large/products-01.jpg">
-                          <img src="../dist/images/products/thum/products-01.png" alt="">
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#" data-image="../dist/images/products/medium/products-02.jpg" data-zoom-image="../dist/images/products/Large/products-02.jpg">
-                          <img src="../dist/images/products/thum/products-02.png" alt="">
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#" data-image="images/products/medium/products-03.jpg" data-zoom-image="images/products/Large/products-03.jpg">
-                          <img src="images/products/thum/products-03.png" alt="">
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#" data-image="images/products/medium/products-04.jpg" data-zoom-image="images/products/Large/products-04.jpg">
-                          <img src="images/products/thum/products-04.png" alt="">
-                        </a>
-                      </li>
-                      <li>
-                        <a href="#" data-image="images/products/medium/products-05.jpg" data-zoom-image="images/products/Large/products-05.jpg">
-                          <img src="images/products/thum/products-05.png" alt="">
-                        </a>
-                      </li>
-                    </ul>
-                    <a class="control-left" id="thum-prev" href="javascript:void(0);">
-                      <i class="fa fa-chevron-left">
-                      </i>
-                    </a>
-                    <a class="control-right" id="thum-next" href="javascript:void(0);">
-                      <i class="fa fa-chevron-right">
-                      </i>
-                    </a>
-                  </div>
-                </div>
-                <div class="products-description">
-                  <h5 class="name">
-                    Lincoln Corner Unit Products
-                  </h5>
-                  <p>
-                    <img alt="" src="images/star.png">
-                    <a class="review_num" href="#">
-                      02 Review(s)
-                    </a>
-                  </p>
-                  <p>
-                    Availability: 
-                    <span class=" light-red">
-                      In Stock
-                    </span>
-                  </p>
-                  <p>
-                    Proin lectus ipsum, gravida et mattis vulputate, tristique ut lectus. Sed et lorem nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrie ces posuere cubilia curae. Proin lectus ipsum, gravida etds mattis vulps utate, tristique ut lectus. Sed et lorem nunc...
-                  </p>
-                  <hr class="border">
-                  <div class="price">
-                    Price : 
-                    <span class="new_price">
-                      450.00
-                      <sup>
-                        $
-                      </sup>
-                    </span>
-                    <span class="old_price">
-                      450.00
-                      <sup>
-                        $
-                      </sup>
-                    </span>
-                  </div>
-                  <hr class="border">
-                  <div class="wided">
-                    <div class="qty">
-                      Qty &nbsp;&nbsp;: 
-                      <select>
-                        <option>
-                          1
-                        </option>
-                      </select>
-                    </div>
-                    <div class="button_group">
-                      <button class="button" >
-                        Add To Cart
-                      </button>
-                      <button class="button compare">
-                        <i class="fa fa-exchange">
-                        </i>
-                      </button>
-                      <button class="button favorite">
-                        <i class="fa fa-heart-o">
-                        </i>
-                      </button>
-                      <button class="button favorite">
-                        <i class="fa fa-envelope-o">
-                        </i>
-                      </button>
-                    </div>
-                  </div>
-                  <div class="clearfix">
-                  </div>
-                  <hr class="border">
-                  <img src="images/share.png" alt="" class="pull-right">
-                </div>
-              </div>
+
+
+
+            <?php
+                                        echo '
+                                       
+                                 
+                                      <div class="products-details">
+                                      <form action="?act=addcart" method="POST">
+                                      <div class="preview_image">
+                                        <div class="preview-small">
+                                          <img id="zoom_03" src="../../adminpages/views/Admin/'.$img_thumbnail  .'" data-zoom-image="images/products/Large/products-01.jpg" alt="">
+                                        </div>
+                                      
+                                      </div>
+                                      <div class="products-description">
+                                        <h5 class="name">
+                                          '.$ten_sp.'
+                                        </h5>
+                                        <p>
+                                          <img alt="" src="images/star.png">
+                                          <a class="review_num" href="#">
+                                            '.$view.' Lượt xem
+                                          </a>
+                                        </p>
+                                        
+                                        <p>
+                                         '.$mo_ta.'
+                                        </p>
+                                        <hr class="border">
+                                        <div class="price">
+                                          Giá :
+                                          <span class="new_price">
+                                            '.$gia_sanpham.'
+                                            <sup>
+                                              VND
+                                            </sup>
+                                          </span>
+                                         
+                                        </div>
+                                        <hr class="border">
+                                        <div class="wided">
+                                        <input class="button" type="hidden" name="id_sanpham" value="'.$id_sanpham.'">
+                                        <input class="button" type="hidden" name="img_thumbnail" value="'.$img_thumbnail.'">
+                                        <input class="button" type="hidden" name="ten_sp" value=" '.$ten_sp.'">
+                                        <input class="button" type="hidden" name="mo_ta" value="'.$mo_ta.'">
+                                        <input class="button" type="hidden" name="gia_sanpham" value="'.$gia_sanpham.'">
+                                          <div class="button_group">
+                                        <input class="button add-cart" type="submit" name="addtocart" value="Thêm giỏ hàng">
+                                            <button class="button compare">
+                                              <i class="fa fa-exchange">
+                                              </i>
+                                            </button>
+                                            <button class="button favorite">
+                                              <i class="fa fa-heart-o">
+                                              </i>
+                                            </button>
+                                            <button class="button favorite">
+                                              <i class="fa fa-envelope-o">
+                                              </i>
+                                            </button>
+                                          </div>
+                                        </div>
+                                        <div class="clearfix">
+                                        </div>
+                                        <hr class="border">
+                                        <img src="images/share.png" alt="" class="pull-right">
+                                      </div>
+                                      </form>
+                                    </div>
+                                      
+                                    ';?>
               <div class="clearfix">
               </div>
               <div class="tab-box">

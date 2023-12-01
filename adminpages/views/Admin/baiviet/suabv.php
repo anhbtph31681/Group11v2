@@ -16,6 +16,12 @@ if(is_array($one_bai_viet)){
       </div>
       <!-- /.card-header -->
       <!-- form start -->
+      <script>
+                                function fillCurrentTime(){
+                                var thoi_gian_hien_tai = new Date().toLocaleDateString();
+                                document.getElementById('ngaydang').value = thoi_gian_hien_tai;
+}
+                            </script>
       <form action="index.php?act=updatebv" method="POST">
         <div class="card-body">
           <div class="form-group">
@@ -27,8 +33,9 @@ if(is_array($one_bai_viet)){
             <input type="text" class="form-control" name="noi_dung"  value="<?php echo $noi_dung ?>" >
           </div>
           <div class="form-group">
-            <label for="exampleInputFile">Ngày đăng</label>
-            <input type="text" class="form-control" name="ngay_dang" value="<?php echo $ngay_dang ?>">
+           
+            <input type="hidden" class="form-control" id="ngaydang" name="ngay_dang" value="<?php echo $ngay_dang ?>">
+            <script>fillCurrentTime();</script>
           </div>
            <div class="form-group">
             <label for="exampleInputFile">Trạng thái</label>

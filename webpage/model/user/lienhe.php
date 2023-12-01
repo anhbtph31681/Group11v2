@@ -5,3 +5,11 @@ function update_lienhe($id_danhmuc, $tendanhmuc,$trangthai)
     pdo_execute($sql);
 }
 ?>
+
+
+<?php
+function submitcontact($id_khachhang, $noi_dung,$trang_thai)
+{
+    $sql = "INSERT INTO lien_he VALUES(NULL, '$id_khachhang', '$noi_dung', '$trang_thai')";
+    pdo_execute($sql);
+}

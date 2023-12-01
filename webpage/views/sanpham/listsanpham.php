@@ -11,7 +11,7 @@
                                 New
                               </div>
                               <div class="thumbnail">
-                                <img src="../../adminpages/views/Admin/'.$sp['img_thumbnail'].'" alt="Product Name">
+                                <a href="?act=ctsanpham&id_sanpham='.$id_sanpham.'"><img src="../../adminpages/views/Admin/'.$sp['img_thumbnail'].'" alt="Product Name"></a>
                               </div>
                               <div class="product-list-description">
                                 <div class="productname">

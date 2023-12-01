@@ -25,15 +25,22 @@
                     <div class="card">
                         <!-- /.card-header -->
                         <div class="card-body">
+                            <script>
+                                function fillCurrentTime(){
+                                var thoi_gian_hien_tai = new Date().toLocaleDateString();
+                                document.getElementById('ngaydang').value = thoi_gian_hien_tai;
+}
+                            </script>
                             <table id="example2" class="table table-bordered table-hover">
                                 <thead>
                                     <form action="index.php?act=addbv" method="POST">
                                         Tiêu đề bài viết <br>
                                         <input type="text" name="tieude"><br><br>
                                         Nội dung bài viết <br>
-                                        <input type="text" name="noidung"><br><br>
-                                        Ngày đăng <br>
-                                        <input type="date" name="ngaydang"><br><br>
+                                        <input type="text" name="noidung" >
+                                        
+                                        <input type="hidden" id="ngaydang" name="ngaydang"><br><br>
+                                        <script>fillCurrentTime();</script>
                                         Trạng thái
                                         <input type="nuimber" name="trangthai" placeholder="0: Ch Duyệt. 1:Duyệt"><br><br>
                                         <input type="submit" name="themmoi" value="Thêm bài viết" class="btn btn-primary"><br><br>
