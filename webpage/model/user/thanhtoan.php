@@ -19,3 +19,4 @@ function insert_adhoadon($id_khachhang,$ngay_dat,$tt,$id_km,$trang_thai,$id,$sol
         return $kq;
     }
 ?>
+

@@ -58,5 +58,6 @@
 	  <script type="text/javascript" src="../dist/js/jquery.carouFredSel-6.2.1-packed.js"></script>
 	  <script defer src="../dist/js/jquery.flexslider.js"></script>
 	  <script type="text/javascript" src="../dist/js/script.min.js" ></script>
+     
    </body>
 </html>

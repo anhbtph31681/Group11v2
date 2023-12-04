@@ -17,9 +17,9 @@ function loadOne_bai_viet($id_baiviet)
     $listOne = pdo_query_one($sql);
     return $listOne;
 }
-function update_bai_viet($id_baiviet, $tieude,$noidung, $ngaydang, $trangthai)
+function update_bai_viet($id_baiviet, $img_thumbnail, $tieude,$noidung, $ngaydang, $trangthai)
 {
-    $sql = "UPDATE bai_viet SET tieu_de = '$tieude', noi_dung = '$noidung', ngay_dang = '$ngaydang', trang_thai = '$trangthai' Where id_baiviet ='$id_baiviet'";
+    $sql = "UPDATE bai_viet SET  img_thumbnail = '$img_thumbnail' ,tieu_de = '$tieude', noi_dung = '$noidung', ngay_dang = '$ngaydang', trang_thai = '$trangthai' Where id_baiviet ='$id_baiviet'";
     pdo_execute($sql);
 }
 function delete_bai_viet($id_baiviet){
@@ -27,8 +27,9 @@ function delete_bai_viet($id_baiviet){
     pdo_execute($sql);
 }
 // thêm bài viết
-function insert_bai_viet($tieude, $noidung, $ngaydang, $trangthai)
+function insert_bai_viet($img_thumbnail,$tieude, $noidung, $ngaydang, $trangthai)
 {
-    $sql = "INSERT INTO bai_viet VALUES(NULL, '$tieude', '$noidung', '$ngaydang', '$trangthai')";
+    $sql = "INSERT INTO bai_viet (img_thumbnail, tieu_de, noi_dung, ngay_dang, trang_thai) 
+            VALUES ('$img_thumbnail', '$tieude', '$noidung', '$ngaydang', '$trangthai')";
     pdo_execute($sql);
 }

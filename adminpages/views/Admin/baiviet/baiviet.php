@@ -33,6 +33,7 @@
                 <tr>
                   <thead>
                     <th>ID</th>
+                    <th>Ảnh</th>
                     <th>TIÊU ĐỀ</th>
                     <th>NỘI DUNG</th>
                     <th>NGÀY ĐĂNG</th>
@@ -51,6 +52,7 @@
                     $xoabv = "index.php?act=xoabv&id_baiviet=" . $id_baiviet;
                     echo '<tr>
                     <td>' . $id_baiviet . '</td>
+                    <td><img src="' . $img_thumbnail . '" alt="Product Image" style="wid_sanphamth: 50px; height: 50px;"></td>
                     <td>' . $tieu_de. '</td>
                     <td>' . $noi_dung . '</td>
                     <td>' . $ngay_dang . '</td>

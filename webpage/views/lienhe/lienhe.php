@@ -76,24 +76,27 @@
                          if (isset($_SESSION['tai_khoan'])) {
                           extract($_SESSION['tai_khoan']);
                           $trang_thai = 1;
-                          echo '   <div class="row">
-                          <div class="col-md-12">
-                            <label>
-                              Lời nhắn của bạn 
-                              <strong class="red">
-                                *
-                              </strong>
-                              <input type="hidden" name="trang_thai" value="'.$trang_thai.'">
-                              <input type="hidden" name="id_khachhang" value="'.$id_khachhang.'">
-                            </label>
-                            <textarea class="inputfild" name="noi_dung" rows="8" >
-                            </textarea>
-                          </div>
-                        </div>
-
-                          <input  class="button add-cart" type="submit" name="submitcontact" value="Gửi">
-';
+                          echo'<input type="hidden" name="trang_thai" value="'.$trang_thai.'">
+                          <input type="hidden" name="id_khachhang" value="'.$id_khachhang.'">';
+                       
                          }
+                         echo '   <div class="row">
+                         <div class="col-md-12">
+                           <label>
+                             Lời nhắn của bạn 
+                             <strong class="red">
+                               *
+                             </strong>
+                             
+                            
+                           </label>
+                           <textarea class="inputfild" name="noi_dung" rows="8" >
+                           </textarea>
+                         </div>
+                       </div>
+
+                         <input  class="button add-cart" type="submit" name="submitcontact" value="Gửi">
+';
                      ?>
                    
                       

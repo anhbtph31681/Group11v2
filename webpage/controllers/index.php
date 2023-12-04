@@ -39,9 +39,9 @@
                     $noi_dung = $_POST["noi_dung"];
                     $trang_thai = $_POST["trang_thai"];
                     submitcontact($id_khachhang, $noi_dung,$trang_thai);
-                    
+                    echo $thongbao = '<script>alert("Gửi thành công!");</script>';
                 }
-                echo $thongbao = '<script>alert("Gửi thành công!");</script>';
+               
                 include "lienhe/lienhe.php";
                 break;   
             case 'ctsanpham':
@@ -53,6 +53,7 @@
                 include "ctsanpham/ctsanpham.php";
                 break;  
             case 'sanpham':
+               
                 if (isset($_POST['kyw']) && $_POST['kyw'] != '') {
                     $kyw = $_POST['kyw'];
                 } else {

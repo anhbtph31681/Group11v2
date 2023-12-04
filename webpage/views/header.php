@@ -47,20 +47,20 @@
                            </div>
                            <div class="col-md-3">
                            <ul class="usermenu" style="display:flex;">
-                              <?php
-                                if (isset($_SESSION['tai_khoan'])) {
-                                    extract($_SESSION['tai_khoan']);
-                                ?>
-                                    <div><li><a href="?act=ctcanhan" class="log">Xin chào : <?=$ten_dang_nhap?></a></li></div>
-                                    <div style="margin-left:10px;"><li><a href="index.php?act=thoat" class="log">Đăng xuất</a></li></div>
-                                <?php } else { ?>
-                                 <li><a href="index.php?act=formdn" class="log">Đăng nhập</a></li>
-                                 <li><a href="checkout2.html" class="reg"></a></li>
-                                <?php } ?>
-                                <?php if($chuc_vu==1){ ?>
-                                 <li><a href="../../adminpages/views/Admin" class="log">ADMIN</a></li>
-                                <?php }?>
-                               
+                           <?php
+                              if (isset($_SESSION['tai_khoan'])) {
+                                extract($_SESSION['tai_khoan']);
+                           ?>
+                              <div><li><a href="?act=ctcanhan" class="log">Xin chào : <?=$ten_dang_nhap?></a></li></div>
+                              <div style="margin-left:10px;"><li><a href="index.php?act=thoat" class="log">Đăng xuất</a></li></div>
+                           <?php
+                              if(isset($chuc_vu) && $chuc_vu == 1) { ?>
+                              <li><a href="../../adminpages/views/Admin" class="log">ADMIN</a></li>
+                           <?php }
+                              } else { ?>
+                              <li><a href="index.php?act=formdn" class="log">Đăng nhập</a></li>
+                              <li><a href="checkout2.html" class="reg"></a></li>
+                           <?php } ?>
                               </ul>
                            </div>
                         </div>
@@ -69,7 +69,10 @@
                      <div class="header_bottom">
                         <ul class="option">
                            <li id="search" class="search">
-                              <form><input class="search-submit" type="submit" value=""><input class="search-input" placeholder="Tìm kiếm" type="text" value="" name="search"></form>
+                              <form action="?act=sanpham" method="POST">
+                                 <input class="search-submit" type="submit" name="timkiem" value="">
+                                 <input class="search-input" placeholder="Tìm kiếm" type="text" value="" name="kyw">
+                              </form>
                            </li>
                            <li class="option-cart">
                               <a href="?act=giohang" class="cart-icon">cart <span class="cart_no"></span></a>
@@ -106,7 +109,7 @@
                                           <?php
                                           foreach ($list_danh_muc as $list) {
                                                 extract($list);
-                                                echo '<li><a href="?act=sanpham&id_danhmuc='.$id_danhmuc.'">'. $ten_danh_muc .'</a></li>';
+                                                echo '<li><a href="?act=sanpham&kyw='.$id_danhmuc.'">'. $ten_danh_muc .'</a></li>';
                                           }
                                           ?>
                                           </ul>
@@ -125,7 +128,6 @@
                                  </div>
                               </li>
                               <li><a href="?act=sanpham">Sản phẩm</a></li>
-                              <li><a href="productgird.html">Quà tặng</a></li>
                               <li><a href="index.php?act=formbaiviet">Bài viết</a></li>
                               <li><a href="?act=lienhe">Liên hệ</a></li>
                            </ul>

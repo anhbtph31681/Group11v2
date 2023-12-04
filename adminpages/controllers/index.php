@@ -18,19 +18,25 @@
                 break;
             case 'suabv':
                     if (isset($_GET['id_baiviet'])) {
+                        
                         $id_baiviet = $_GET['id_baiviet'];
+                        
                         $one_bai_viet = loadOne_bai_viet($id_baiviet);
                     }
                     include "../../views/Admin/baiviet/suabv.php";
                     break;
             case 'updatebv';
                     if (isset($_POST["sua"]) && ($_POST["sua"])) {
+                        $uploadDir = "./baiviet/uploads/"; 
+                        $imgPath = $uploadDir . basename($_FILES["img_thumbnail"]["name"]);
+                        move_uploaded_file($_FILES["img_thumbnail"]["tmp_name"], $imgPath);
                         $id_baiviet = $_POST['id_baiviet'];
+                        $img_thumbnail = $imgPath;
                         $tieude = $_POST['tieu_de'];
                         $noidung = $_POST['noi_dung'];
                         $ngaydang = $_POST['ngay_dang'];
                         $trangthai = $_POST['trang_thai'];
-                        update_bai_viet($id_baiviet, $tieude, $noidung, $ngaydang, $trangthai);
+                        update_bai_viet($id_baiviet, $img_thumbnail, $tieude, $noidung, $ngaydang, $trangthai);
                     }
                     $list_bai_viet= loadAll_bai_viet();
                     include "../../views/Admin/baiviet/baiviet.php";
@@ -49,11 +55,16 @@
                         break;
             case 'addbv':
                         if (isset($_POST["themmoi"]) && ($_POST["themmoi"])) {
+                            $uploadDir = "./baiviet/uploads/";
+                            $imgPath = $uploadDir . basename($_FILES["img_thumbnail"]["name"]);
+                            move_uploaded_file($_FILES["img_thumbnail"]["tmp_name"], $imgPath);
+
+                            $img_thumbnail = $imgPath;
                             $tieude = $_POST["tieude"];
                             $noidung = $_POST["noidung"];
                             $ngaydang = $_POST["ngaydang"];
                             $trangthai = $_POST["trangthai"];
-                            insert_bai_viet($tieude, $noidung, $ngaydang, $trangthai);
+                            insert_bai_viet($img_thumbnail,$tieude, $noidung, $ngaydang, $trangthai);
                         }
                         $list_bai_viet = loadAll_bai_viet();
                         include "../../views/Admin/baiviet/baiviet.php";  
@@ -174,12 +185,8 @@
                         update_danh_muc($id_danhmuc, $tendanhmuc,$trangthai);
                     }
                     $list_danh_muc= loadAll_danh_muc();
-                    include "../../views/Admin/danhmuc/danhmuc.php";
-                   
+                    include "../../views/Admin/danhmuc/danhmuc.php";                  
                     break;
-
-
-
             case'lienhe':
                 $list_lienhe= loadAll_lienhe();
                 include "lienhe/lienhe.php";
@@ -191,14 +198,12 @@
                     }
                     $list_lienhe = loadAll_lienhe();
                     include "../../views/Admin/lienhe/lienhe.php";
-          
-
             case'qlhoadon':
                 $hoadon = getall_hoadon();
                 include "qlhoadon/qlhoadon.php";
                 break;
             case 'suahd':
-                if (isset($_GET['id_hoadon'])) {
+                if (isset($_GET['id_hoadon'])){
                     $id_hoadon = $_GET['id_hoadon'];
                     $sua_hd = suahd($id_hoadon);
                 }
@@ -237,14 +242,14 @@
                case 'suasp':
                     if (isset($_GET['id_sanpham'])) {
                         $id_sanpham = $_GET['id_sanpham'];
-                        $one_san_pham = loadOne_san_pham($id_sanpham); // Assuming you have a function to load a single product
+                        $one_san_pham = loadOne_san_pham($id_sanpham);
                     }
                     include "../../views/Admin/sanpham/suasp.php";
                     break;
                 
                     case 'updatesp':
                         if (isset($_POST["sua"]) && ($_POST["sua"])) {
-                            $uploadDir = "./sanpham/uploads/"; // Specify the path where you want to store uploaded images
+                            $uploadDir = "./sanpham/uploads/"; 
                             $imgPath = $uploadDir . basename($_FILES["img_thumbnail"]["name"]);
                             move_uploaded_file($_FILES["img_thumbnail"]["tmp_name"], $imgPath);
                             $id_sanpham = $_POST['id_sanpham'];
@@ -281,7 +286,7 @@
                 
                 case 'addsp':
                     if (isset($_POST["themmoi"]) && ($_POST["themmoi"])) {
-                        $uploadDir = "./sanpham/uploads/"; // Specify the path where you want to store uploaded images
+                        $uploadDir = "./sanpham/uploads/";
                         $imgPath = $uploadDir . basename($_FILES["img_thumbnail"]["name"]);
                         move_uploaded_file($_FILES["img_thumbnail"]["tmp_name"], $imgPath);
                         $ten_sp = $_POST["ten_sp"];
@@ -292,9 +297,9 @@
                         $trang_thai = $_POST["trang_thai"];
                         $gia_sanpham = $_POST["gia_sanpham"];
                         $view = $_POST['view'];
-                        insert_san_pham($ten_sp, $ngay_nhap, $mo_ta, $id_danhmuc, $img_thumbnail, $trang_thai,$gia_sanpham, $view ); // Assuming you have a function to insert a product
+                        insert_san_pham($ten_sp, $ngay_nhap, $mo_ta, $id_danhmuc, $img_thumbnail, $trang_thai,$gia_sanpham, $view ); 
                     }
-                    $list_san_pham = loadAll_san_pham(); // Assuming you have a function to load all products
+                    $list_san_pham = loadAll_san_pham();
                     include "../../views/Admin/sanpham/sanpham.php";
                     break;            
              

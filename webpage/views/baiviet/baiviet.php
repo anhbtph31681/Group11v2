@@ -1,7 +1,7 @@
   <div class="page-index">
           <div class="container">
             <p>
-              Trang chủ - Thông tin cá nhân
+              Trang chủ - Bài viết
             </p>
           </div>
         </div>
@@ -13,7 +13,7 @@
           <div class="row">
             <div class="col-md-12">
               <h5 class="title contact-title">
-                Thông tin cá nhân
+                Bài viết
               </h5>
               <div class="clearfix">
               </div>
@@ -27,6 +27,7 @@
                                 extract($bv);
                                 echo '
                                 <form style="margin-left: 200px;color:black;">
+                                <div ><a href="#"><img style="width:343px;height:316px;" src="../../adminpages/views/Admin/'.$bv['img_thumbnail'].'" alt="Product Name"></a></div>
                                     <h2>'.$tieu_de.'</h2>
                                         
                                             <p>Ngày đăng:'.$ngay_dang.'</p>

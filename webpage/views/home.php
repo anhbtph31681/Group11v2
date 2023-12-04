@@ -78,7 +78,7 @@
                                  <div class="products">
                                  
                                     <div class="offer">'.$sph['view'].'</div>
-                                    <div ><a href="?act=ctsanpham&id_sanpham='.$id_sanpham.'"><img style="width:343px;" src="../../adminpages/views/Admin/'.$sph['img_thumbnail'].'" alt="Product Name"></a></div>
+                                    <div ><a href="?act=ctsanpham&id_sanpham='.$id_sanpham.'"><img style="width:343px;height:316px;" src="../../adminpages/views/Admin/'.$sph['img_thumbnail'].'" alt="Product Name"></a></div>
                                     <div class="productname">'.$sph['ten_sp'].'</div>
                                     <h4 class="price">'.$sph['gia_sanpham'].' VND</h4>
                                     <div class="button_group"><input class="button add-cart" type="submit" name="addtocart" value="Thêm giỏ hàng"><button class="button compare" type="button"><i class="fa fa-exchange"></i></button><button class="button wishlist" type="button"><i class="fa fa-heart-o"></i></button></div>
@@ -161,7 +161,7 @@
                                     <div class="products">
                                     
                                        <div class="offer">NEW</div>
-                                       <div ><a href="?act=ctsanpham&id_sanpham='.$id_sanpham.'"><img style="width:343px;" src="../../adminpages/views/Admin/'.$sp['img_thumbnail'].'" alt="Product Name"></a></div>
+                                       <div ><a href="?act=ctsanpham&id_sanpham='.$id_sanpham.'"><img style="width:343px;height:316px;" src="../../adminpages/views/Admin/'.$sp['img_thumbnail'].'" alt="Product Name"></a></div>
                                        <div class="productname">'.$sp['ten_sp'].'</div>
                                        <h4 class="price">'.$sp['gia_sanpham'].' VND</h4>
                                        <div class="button_group"><input class="button add-cart" type="submit" name="addtocart" value="Thêm giỏ hàng"><button class="button compare" type="button"><i class="fa fa-exchange"></i></button><button class="button wishlist" type="button"><i class="fa fa-heart-o"></i></button></div>

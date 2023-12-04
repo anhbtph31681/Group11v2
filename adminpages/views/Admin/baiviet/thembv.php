@@ -33,7 +33,9 @@
                             </script>
                             <table id="example2" class="table table-bordered table-hover">
                                 <thead>
-                                    <form action="index.php?act=addbv" method="POST">
+                                    <form action="index.php?act=addbv" enctype="multipart/form-data" method="POST">
+                                        Ảnh <br>
+                                        <input type="file" name="img_thumbnail" placeholder="Ảnh"><br><br>
                                         Tiêu đề bài viết <br>
                                         <input type="text" name="tieude"><br><br>
                                         Nội dung bài viết <br>

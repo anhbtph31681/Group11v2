@@ -22,8 +22,13 @@ if(is_array($one_bai_viet)){
                                 document.getElementById('ngaydang').value = thoi_gian_hien_tai;
 }
                             </script>
-      <form action="index.php?act=updatebv" method="POST">
+      <form action="index.php?act=updatebv" enctype="multipart/form-data" method="POST">
         <div class="card-body">
+        <div class="form-group">
+                <label for="exampleInputFile">Ảnh</label>
+                <input style="border:none;" type="file" class="form-control" name="img_thumbnail" value="<?php echo $img_thumbnail1 ?>">
+                
+            </div>
           <div class="form-group">
             <label for="exampleInputEmail1">Tiêu đề</label>
             <input type="text" class="form-control" name="tieu_de"  value="<?php echo $tieu_de ?>">
