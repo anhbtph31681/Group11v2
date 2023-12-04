@@ -68,11 +68,12 @@
                     <h5>
                       Thông tin nhận hàng
                     </h5>
-                   <form action="?act=thanhtoan" method="POST">
+                   <form action="index.php?act=addttadmin" method="post">
                         <div>
-                        <input style="width:300px;height:30px;border-radius:5px;" type="text" placeholder="Tên người nhận hàng">
-                        <input style="width:300px;height:30px;border-radius:5px;" type="text" placeholder="Số điện thoại người nhận">
-                        <input style="width:300px;height:30px;border-radius:5px;" type="text" placeholder="Địa chỉ ngưới nhận">
+                        <input style="width:300px;height:30px;border-radius:5px;" type="text" name="ten_nn" placeholder="Tên người nhận hàng">
+                        <input style="width:300px;height:30px;border-radius:5px;" type="text" name="sdt_nn" placeholder="Số điện thoại người nhận">
+                        <input style="width:300px;height:30px;border-radius:5px;" type="text" name="diachi_nn" placeholder="Địa chỉ ngưới nhận">
+                        
                         <!-- <label for="giaohang">Hình thức giao hàng</label> -->
                         <!-- <select id="luachon" name="luachon">
                         <option value="slow">Giao hàng tiết kiệm</option>
@@ -80,7 +81,7 @@
                         <input style="width:300px;height:30px;border-radius:5px;" type="hidden" placeholder="" cheked>
                         <input style="width:300px;height:30px;border-radius:5px;" type="hidden" placeholder="">
                         </div>
-                        <button type="submit">Thanh toán</button>
+                        <button type="submit" name="thanhtoan">Thanh toán</button>
                     </form>
                   </div>
                 </div>

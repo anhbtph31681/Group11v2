@@ -1,6 +1,7 @@
 <?php
-if(is_array($sua_hd1)){
-  extract($sua_hd1);
+if(is_array($hoadon)){
+  extract($hoadon, EXTR_PREFIX_ALL, 'prefix');
+  echo var_dump($hoadon);
 }
 
 ?>
@@ -41,76 +42,44 @@ if(is_array($sua_hd1)){
               <!-- /.card-header -->
             
               <div class="card-body">
-              <form action="" method="">
+              <form >
                 
         <div class="card-body">
   
           <div class="form-group">
           <div class="form-group">
             <label for="exampleInputEmail1">Id hóa đơn</label>
-            <input type="text" class="form-control" name=""   value="<?php echo $id_hoadon1 ?>" readonly>
+            <input type="text" class="form-control" name="id_cthoadon"   value="<?php echo $id_cthoadon ?>" readonly>
           </div>
           <div class="form-group">
             <label for="exampleInputEmail1">Id khách hàng</label>
-            <input type="text" class="form-control" name=""  value="<?php echo $id_khachhang ?>" readonly>
+            <input type="text" class="form-control" name=""  value="<?php echo $id_hoadon ?>" readonly>
           </div>
           <div class="form-group">
             <label for="exampleInputEmail1">Họ tên</label>
-            <input type="text" class="form-control" name=""  value="<?php echo $ho_ten ?>" readonly>
+            <input type="text" class="form-control" name=""  value="<?php echo $ten_nn ?>" readonly>
           </div>
           <div class="form-group">
             <label for="exampleInputEmail1">Số điện thoại</label>
-            <input type="number" class="form-control" name=""  value="<?php echo $sdt ?>" readonly>
+            <input type="number" class="form-control" name=""  value="<?php echo $sdt_nn ?>" readonly>
           </div>
           <div class="form-group">
             <label for="exampleInputEmail1">Email</label>
-            <input type="text" class="form-control" name=""  value="<?php echo $email ?>" readonly>
+            <input type="text" class="form-control" name=""  value="<?php echo $diachi_nn ?>" readonly>
           </div>
           <div class="form-group">
             <label for="exampleInputEmail1">Địa chỉ</label>
-            <input type="text" class="form-control" name=""  value="<?php echo $dia_chi ?>" readonly>
-          </div>
-          <div class="form-group">
-            <label for="exampleInputEmail1">Id sản phẩm</label>
             <input type="text" class="form-control" name=""  value="<?php echo $id_sanpham ?>" readonly>
           </div>
           <div class="form-group">
-            <label for="exampleInputEmail1">Tên sản phẩm</label>
-            <input type="text" class="form-control" name=""  value="<?php echo $ten_sp ?>" readonly>
-          </div>
-          <div class="form-group">
-            <label for="exampleInputEmail1">Mô tả sản phẩm</label>
-            <input type="text" class="form-control" name=""  value="<?php echo $mo_ta ?>" readonly>
-          </div>
-          <div class="form-group">
-            <label for="exampleInputEmail1">Giá sản phẩm</label>
-            <input type="text" class="form-control" name=""  value="<?php echo $gia_sanpham ?>" readonly>
-          </div>
-          <div class="form-group">
-            <label for="exampleInputEmail1">Số lượng mua</label>
+            <label for="exampleInputEmail1">Id sản phẩm</label>
             <input type="text" class="form-control" name=""  value="<?php echo $soluong ?>" readonly>
           </div>
           <div class="form-group">
-            <label for="exampleInputEmail1">Khuyến mãi</label>
-            <input type="text" class="form-control" name=""  value="<?php echo $phan_tram_km?>%" readonly>
+            <label for="exampleInputEmail1">Tên sản phẩm</label>
+            <input type="text" class="form-control" name=""  value="<?php echo $tong_hd ?>" readonly>
           </div>
-          <div class="form-group">
-            <label for="exampleInputEmail1">Thanh toán</label>
-            <input type="text" class="form-control" name=""  value="<?php $tientt=($gia_sanpham * ((100-$phan_tram_km)/100))*$soluong; echo $tientt?>" readonly>
-          </div>
-          <div class="form-group">
-            <label for="exampleInputEmail1">Trạng thái</label>
-            <input type="text" class="form-control" name=""  value="<?php 
-                
-                  if($trang_thai == 0){
-                    $trang_thai = "Chưa thanh toán";
-                  }else{
-                    $trang_thai = "Đã Thanh toán";
-                  }
-                
-                echo $trang_thai ?>" readonly>
-          </div>
-         
+          
         </div>
         <!-- /.card-body -->
         

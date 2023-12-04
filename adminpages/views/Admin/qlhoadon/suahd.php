@@ -23,29 +23,32 @@ if(is_array($sua_hd)){
             <input type="text" class="form-control" name="id_kh"  value="<?php echo $id_khachhang ?>" readonly>
           </div>
           <div class="form-group">
-            <label for="exampleInputEmail1">ID Sản phẩm</label>
-            <input type="text" class="form-control" name="id_sanpham"  value="<?php echo $id_sanpham ?>" >
+            <label for="exampleInputEmail1">Mã đơn hàng</label>
+            <input type="text" class="form-control" name="ma_donhang"  value="<?php echo $ma_donhang ?>" readonly>
           </div>
           <div class="form-group">
-            <label for="exampleInputPassword1">Ngày đặt</label>
-            <input type="date" class="form-control" name="ngay_dat"  value="<?php echo $ngay_dat ?>" >
+            <label for="exampleInputEmail1">Tên người nhận</label>
+            <input type="text" class="form-control" name="ten_nn"  value="<?php echo $ten_nn ?>" >
           </div>
           <div class="form-group">
-            <label for="exampleInputPassword1">Số lượng</label>
-            <input type="number" class="form-control" name="soluong"  value="<?php echo $soluong ?>" >
+            <label for="exampleInputEmail1">SĐT người nhận</label>
+            <input type="text" class="form-control" name="sdt_nn"  value="<?php echo $sdt_nn ?>" >
           </div>
           <div class="form-group">
-            <label for="exampleInputFile">Tổng hóa đơn</label>
-            <input type="text" class="form-control" name="total" value="<?php echo $tong_hoa_don ?>">
+            <label for="exampleInputEmail1">Địa chỉ người nhận</label>
+            <input type="text" class="form-control" name="diachi_nn"  value="<?php echo $diachi_nn ?>" >
           </div>
-           <div class="form-group">
-            <label for="exampleInputFile">ID khuyến mãi</label>
-             <input type="text" class="form-control" name="makm"  value="<?php echo $id_km ?>"> 
-          </div> 
           <div class="form-group">
             <label for="exampleInputFile">Trạng thái</label>
              <input type="text" class="form-control" name="status"  placeholder="0:chưa duyệt. 1: Đã duyệt" value="<?php echo $trang_thai ?>"> 
           </div> 
+          <div class="form-group">
+            <label for="exampleInputEmail1">Hình thức thanh toán</label>
+            <input type="text" class="form-control" name="hinhthuc_tt"  value="<?php echo $hinhthuc_tt ?>">
+          </div><div class="form-group">
+            <label for="exampleInputEmail1">Ngày tạo đơn</label>
+            <input type="text" class="form-control" name="ngay_tao"  value="<?php echo $ngay_tao ?>" readonly>
+          </div>
           <input type="hidden" name="id_hoadon" value="<?php echo $id_hoadon ?>">
         </div>
         <!-- /.card-body -->

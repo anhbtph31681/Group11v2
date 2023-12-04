@@ -32,17 +32,14 @@
                   <thead>
                   <tr>
                     <th>ID</th>
-                    <th>ID khách hàng</th>
-                    <th>Tên khách hàng</th>
-                    <th>Số điện thoại</th>
-                    <th>Email</th>
-                    <th>Địa chỉ</th>
-                    <th>ID sản phẩm</th>
-                    <th>Ngày đặt</th>
-                    <th>Giá sản phẩm</th>
-                    <th>Số lượng mua</th>
-                    <th>ID khuyến mãi</th>
+                    <th>ID Tài khoản đặt hàng</th>
+                    <th>Mã đơn hàng</th>
+                    <th>Tên người nhận</th>
+                    <th>SĐT người nhận</th>
+                    <th>Địa chỉ người nhận</th>
                     <th>Trạng thái</th>
+                    <th>Thanh toán</th>
+                    <th>Ngày đặt</th>
                     <th>
                     
                     </th>
@@ -64,17 +61,14 @@
                     $cthd = "index.php?act=htcthoadon&id_hoadon=" . $id_hoadon;
                     echo '<tr>
                     <td>' . $id_hoadon . '</td>
-                    <td>' . $id_khachhang. '</td>
-                    <td>' . $ho_ten. '</td>
-                    <td>' . $sdt. '</td>
-                    <td>' . $email. '</td>
-                    <td>' . $dia_chi. '</td>
-                    <td>' . $id_sanpham. '</td>
-                    <td>' . $ngay_dat. '</td>
-                    <td>' . $gia_sanpham . '</td>
-                    <td>' . $soluong . '</td>
-                    <td>' . $id_km . '</td>
+                    <td>' . $id_khachhang. '</td>  
+                    <td>' . $ma_donhang. '</td>
+                    <td>' . $ten_nn. '</td>
+                    <td>' . $sdt_nn. '</td>
+                    <td>' . $diachi_nn . '</td>
                     <td>' . $trang_thai . '</td>
+                    <td>' . $hinhthuc_tt . '</td>
+                    <td>' . $ngay_tao . '</td>
                     <td >
                     <div style="display:flex;">
                     <a href="'.$suahd.'"><input type="button" class="button" value="Sửa"></a>  

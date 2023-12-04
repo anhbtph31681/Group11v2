@@ -135,13 +135,13 @@
 
                 case'cthoadon':
                     $hoadon = getall_hoadon1();
-                    include "qlhoadon/qlhoadon.php";
+                   
                     break;
                 case 'htcthoadon':
                     if (isset($_GET['id_hoadon'])) {
-                        $id_hoadon1 = $_GET['id_hoadon'];
-                        $sua_hd1 = suahd1($id_hoadon1);
-                    }
+                        $idhd = $_GET['id_hoadon'];
+                        $hoadon = getall_hoadon1($idhd);
+                    }else{echo "tyhatbai";}
                     include "../../views/Admin/cthoadon/cthoadon.php";
                     break;
 
@@ -211,15 +211,16 @@
                 break;
             case 'updatehd':
                 if (isset($_POST["sua"]) && ($_POST["sua"])) {
-                    $idkh = $_POST['id_kh'];
-                    $id_sanpham = $_POST['id_sanpham'];
                     $id_hoadon = $_POST['id_hoadon'];
-                    $ngaydat = $_POST['ngay_dat'];
-                    $tong = $_POST['total'];
-                    $soluong = $_POST['soluong'];
-                    $makm = $_POST['makm'];
-                    $status = $_POST['status'];
-                    updatehd($id_hoadon, $idkh,$id_sanpham, $ngaydat, $tong,$soluong, $makm, $status);
+                    $idkh = $_POST['id_kh'];
+                    $ma_donhang = $_POST['ma_donhang'];
+                    $ten_nn = $_POST['ten_nn'];
+                    $sdt_nn = $_POST['sdt_nn'];
+                    $diachi_nn = $_POST['diachi_nn'];
+                    $trang_thai = $_POST['status'];
+                    $hinhthuc_tt = $_POST['hinhthuc_tt'];
+                    $ngay_tao = $_POST['ngay_tao'];
+                    updatehd($id_hoadon, $idkh, $ma_donhang, $ten_nn, $sdt_nn,$diachi_nn, $trang_thai, $hinhthuc_tt,$ngay_tao);
                
             }
             $hoadon = getall_hoadon();

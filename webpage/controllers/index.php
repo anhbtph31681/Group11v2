@@ -15,6 +15,9 @@
     $sphome1=loadAll_san_pham();
     $sphot=loadAll_hot();
     $all_tt = loadAll_tt();
+
+    // $userID = $_SESSION['tai_khoan'] ?? 0;
+    // $user = loadOne_tt($userID);
    
     include "header.php";
     if (isset($_GET['act'])){
@@ -128,25 +131,33 @@
                     header('location: index.php');
                     break; 
 
-            case'thanhtoan':
-                include "thanhtoan/thanhtoan.php";
+            case 'thanhtoan':
+                // echo "<pre>";
+                // print_r($_SESSION['giohang']);
+                // echo "</pre>";
+            
+                include "../views/thanhtoan/thanhtoan.php";
                 break;
             case 'addttadmin':
-                        if (isset($_POST["themmoi"]) && ($_POST["themmoi"])) {
-
-                            $id_khachhang = $_POST["id_khachhang"];
-                            $id = $_POST["id_sanpham"];
-                            $ngay_dat = $_POST["ngay_dat"];
-                            $tt = $_POST["tong_hoa_don"];
-                            $soluong = 1;
-                            $id_km = $_POST["id_km"];
-                            $trang_thai = $_POST["trang_thai"];
-                            
-                            insert_adhoadon($id_khachhang,$ngay_dat,$tt,$id_km,$trang_thai,$id,$soluong );
-                        }
-                        getall_hoadon();
-                        include "../views/thanhtoan/thanhtoan.php";  
-                        break;
+                if (isset($_SESSION['tai_khoan'])) {
+                    extract($_SESSION['tai_khoan']);
+                $hinhthuc_tt = "tienmat";
+                $ma_donhang = rand(1, 9999);
+            
+            
+                $id_bil = insert_bill($id_khachhang,$ma_donhang,$_POST["ten_nn"],$_POST["sdt_nn"],$_POST["diachi_nn"],$hinhthuc_tt);
+            
+                $i = 0;
+                foreach($_SESSION['giohang'] as $key =>  $order) {
+                    insert_bill_detail($id_bil,$order[0],$order[5],$order[4]);
+                    $i++;
+                }
+                unset($_SESSION['giohang']);
+                echo "<script>alert('Thanh toán thành công')</script>";
+                echo "<script>window.location.href = 'index.php?act=giohang'</script>";}
+                // getall_hoadon();
+                include "../views/thanhtoan/thanhtoan.php";
+                break;
 
             case 'dangnhap':
                     if (isset($_POST['dangnhap']) && ($_POST['dangnhap'])) {

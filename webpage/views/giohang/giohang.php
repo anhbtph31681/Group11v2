@@ -33,7 +33,7 @@
 
 
               </div>
-              <form id="loadsub" action="?act=addttadmin" method="POST">
+              <form id="loadsub" action="index.php?act=thanhtoan" method="POST">
               <table  class="shop-table">
                   <tr>
                   <th>
@@ -64,7 +64,7 @@
                     $t=0;
                     $tong=0;
                     if (isset($_SESSION['tai_khoan'])) {
-                      extract($_SESSION['tai_khoan']);
+                      // extract($_SESSION['tai_khoan']);
                   foreach($_SESSION['giohang'] as $sp){
                     $tt = $sp[4] * $sp[5];
                     $tong +=$tt;
@@ -136,7 +136,7 @@
                   <tr>
                     <td colspan="6">
                     <div style="float:right;background: #fff;padding: 10px 20px; border: 1px solid #cccccc;font-size: 14px;-webkit-border-radius: 10px;border-radius: 10px;outline: none;" class="pull-left">
-                        <a href="index.php" >Tiếp tục mua hàng</a>
+                        <a href="index.php">Tiếp tục mua hàng</a>
                       </div>
 
                     
