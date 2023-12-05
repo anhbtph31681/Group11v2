@@ -141,7 +141,7 @@
                     if (isset($_GET['id_hoadon'])) {
                         $idhd = $_GET['id_hoadon'];
                         $hoadon = getall_hoadon1($idhd);
-                    }else{echo "tyhatbai";}
+                    }else{}
                     include "../../views/Admin/cthoadon/cthoadon.php";
                     break;
 
@@ -240,7 +240,7 @@
                 $list_san_pham = loadAll_san_pham();
                 include "sanpham/sanpham.php";
                 break;
-               case 'suasp':
+            case 'suasp':
                     if (isset($_GET['id_sanpham'])) {
                         $id_sanpham = $_GET['id_sanpham'];
                         $one_san_pham = loadOne_san_pham($id_sanpham);
@@ -248,7 +248,7 @@
                     include "../../views/Admin/sanpham/suasp.php";
                     break;
                 
-                    case 'updatesp':
+            case 'updatesp':
                         if (isset($_POST["sua"]) && ($_POST["sua"])) {
                             $uploadDir = "./sanpham/uploads/"; 
                             $imgPath = $uploadDir . basename($_FILES["img_thumbnail"]["name"]);

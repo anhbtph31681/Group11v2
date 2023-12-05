@@ -1,10 +1,13 @@
 <?php 
 function getall_hoadon1($idhd)
 {
-    $sql = "SELECT * FROM chi_tiet_hoa_don
-    JOIN hoa_don ON chi_tiet_hoa_don.id_hoadon = hoa_don.id_hoadon WHERE chi_tiet_hoa_don.id_hoadon ='$idhd' "; 
+    $sql = "SELECT *
+    FROM chi_tiet_hoa_don
+    INNER JOIN sanpham ON chi_tiet_hoa_don.id_sanpham = sanpham.id_sanpham
+    INNER JOIN hoa_don ON chi_tiet_hoa_don.id_hoadon = hoa_don.id_hoadon
+    WHERE chi_tiet_hoa_don.id_hoadon ='$idhd' "; 
 
-    $kq = pdo_query($sql);
+    $kq = pdo_query_one($sql);
     return $kq;
     
 }

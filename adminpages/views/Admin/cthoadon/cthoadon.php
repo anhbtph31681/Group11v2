@@ -1,6 +1,6 @@
 <?php
 if(is_array($hoadon)){
-  extract($hoadon, EXTR_PREFIX_ALL, 'prefix');
+  extract($hoadon);
   echo var_dump($hoadon);
 }
 
@@ -45,38 +45,29 @@ if(is_array($hoadon)){
               <form >
                 
         <div class="card-body">
-  
+          
           <div class="form-group">
           <div class="form-group">
-            <label for="exampleInputEmail1">Id hóa đơn</label>
-            <input type="text" class="form-control" name="id_cthoadon"   value="<?php echo $id_cthoadon ?>" readonly>
+            <input type="hidden" class="form-control" name="id_cthoadon"   value="<?php echo $id_cthoadon ?>" readonly>
           </div>
           <div class="form-group">
-            <label for="exampleInputEmail1">Id khách hàng</label>
+            <label for="exampleInputEmail1">Id Hoá đơn</label>
             <input type="text" class="form-control" name=""  value="<?php echo $id_hoadon ?>" readonly>
           </div>
           <div class="form-group">
-            <label for="exampleInputEmail1">Họ tên</label>
-            <input type="text" class="form-control" name=""  value="<?php echo $ten_nn ?>" readonly>
-          </div>
-          <div class="form-group">
-            <label for="exampleInputEmail1">Số điện thoại</label>
-            <input type="number" class="form-control" name=""  value="<?php echo $sdt_nn ?>" readonly>
-          </div>
-          <div class="form-group">
-            <label for="exampleInputEmail1">Email</label>
-            <input type="text" class="form-control" name=""  value="<?php echo $diachi_nn ?>" readonly>
-          </div>
-          <div class="form-group">
-            <label for="exampleInputEmail1">Địa chỉ</label>
+            <label for="exampleInputEmail1">Id sản phẩm</label>
             <input type="text" class="form-control" name=""  value="<?php echo $id_sanpham ?>" readonly>
           </div>
           <div class="form-group">
-            <label for="exampleInputEmail1">Id sản phẩm</label>
+            <label for="exampleInputEmail1">Tên sản phẩm</label>
+            <input type="text" class="form-control" name=""  value="<?php echo $ten_sp ?>" readonly>
+          </div>
+          <div class="form-group">
+            <label for="exampleInputEmail1">Số lượng</label>
             <input type="text" class="form-control" name=""  value="<?php echo $soluong ?>" readonly>
           </div>
           <div class="form-group">
-            <label for="exampleInputEmail1">Tên sản phẩm</label>
+            <label for="exampleInputEmail1">Tổng</label>
             <input type="text" class="form-control" name=""  value="<?php echo $tong_hd ?>" readonly>
           </div>
           
