@@ -116,3 +116,22 @@ function pdo_query_value($sql){
         unset($conn);
     }
 }
+
+function pdo_query_all($sql, $sql_args = []) {
+    try {
+        $conn = pdo_get_connection();
+        $stmt = $conn->prepare($sql);
+        $stmt->execute($sql_args);
+        $results = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $results;
+    } catch (PDOException $e) {
+        throw $e;
+    } finally {
+        unset($conn);
+    }
+}
+
+
+
+
+

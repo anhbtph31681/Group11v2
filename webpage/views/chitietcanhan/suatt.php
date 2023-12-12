@@ -54,7 +54,7 @@
         <!-- /.card-body -->
         
         <div class="card-footer">
-          <input type="submit" class="btn btn-primary" name="sua" value="Sửa">
+          <input type="submit" class="btn btn-primary" name="sua" value="Cập Nhật">
           <a href="?act=ctcanhan"><input type="button" value="Trở về" class="btn btn-primary"></a>
           <p readonly>*Lưu ý: Sau khi bạn sửa chúng tôi sẽ đăng xuất tài khoản của bạn để cập nhật thông tin! </p>
         </div>

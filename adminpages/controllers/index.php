@@ -138,10 +138,12 @@
                    
                     break;
                 case 'htcthoadon':
-                    if (isset($_GET['id_hoadon'])) {
+                    if (isset($_GET['id_hoadon']) && $_GET['id_hoadon'] > 0) {
                         $idhd = $_GET['id_hoadon'];
-                        $hoadon = getall_hoadon1($idhd);
-                    }else{}
+                    } else {
+                        $idhd = 0;
+                    }
+                    $listhd = loadAll_hoa_don($idhd);
                     include "../../views/Admin/cthoadon/cthoadon.php";
                     break;
 

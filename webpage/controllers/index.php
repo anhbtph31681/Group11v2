@@ -141,7 +141,7 @@
             case 'addttadmin':
                 if (isset($_SESSION['tai_khoan'])) {
                     extract($_SESSION['tai_khoan']);
-                $hinhthuc_tt = "tienmat";
+                $hinhthuc_tt = "Nhận hàng thanh toán";
                 $ma_donhang = rand(1, 9999);
             
             

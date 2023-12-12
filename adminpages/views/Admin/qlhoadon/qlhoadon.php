@@ -31,7 +31,7 @@
                 <table id="example2" class="table table-bordered table-hover">
                   <thead>
                   <tr>
-                    <th>ID</th>
+                    <th>ID Hóa Đơn</th>
                     <th>ID Tài khoản đặt hàng</th>
                     <th>Mã đơn hàng</th>
                     <th>Tên người nhận</th>

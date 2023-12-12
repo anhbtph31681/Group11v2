@@ -1,27 +1,33 @@
 <style>
-.showtt{
-    display:flex;
-    width:70%;
-    
+.showtt {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin-bottom: 20px;
 }
 
-.showtt .ttleft{
-    width:20%;
-
+.ttleft {
+    flex: 1;
 }
 
-.showtt .ttright{
-    width:40%;
-
+.ttleft .item {
+    margin-bottom: 10px;
+    font-weight: bold;
+    font-size:14px;
 }
 
-
-.showtt .item{
-    padding:6px;
-    background:aqua;
-    border-bottom:1px solid black;
-    font-size:18px;
+.ttright {
+    flex: 1;
+    text-align: right;
 }
+
+.ttright .item {
+    margin-bottom: 10px;
+    text-align: left;
+}
+
 </style>
 
 <div class="page-index">

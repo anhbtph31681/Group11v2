@@ -93,12 +93,12 @@
                       <img src="../../adminpages/views/Admin/'.$sp[1].'" alt="">
                     </td>
                     <td>
-                      
-                        '.$sp[4].'
+                       
+                        '.$sp[4].' 
                       
                     </td>
                     <td>
-                        '.$sp[5].'
+                       '.$sp[5].'
                     </td>
                   
                     <td>
