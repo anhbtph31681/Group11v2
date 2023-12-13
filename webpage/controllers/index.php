@@ -12,11 +12,13 @@
     include "../model/user/baiviet.php";
     include "../model/user/lienhe.php";
     include "../model/user/binhluan.php";
+    include "../model/user/hoadon.php";
     $list_danh_muc = loadAll_danh_muc();
     $sphome1=loadAll_san_pham();
     $sphot=loadAll_hot();
     $all_tt = loadAll_tt();
     $list_binhluan= loadAll_binhluan();
+    
     // $userID = $_SESSION['tai_khoan'] ?? 0;
     // $user = loadOne_tt($userID);
    
@@ -24,6 +26,23 @@
     if (isset($_GET['act'])){
         $act = $_GET['act'];
         switch ($act){
+            case 'updatehd1':
+                if (isset($_POST["sua"]) && ($_POST["sua"])) {
+                   
+                    $id_hoadon = $_POST['id_hoadon'];
+                    $idkh = $_POST['id_kh'];
+                    $ma_donhang = $_POST['ma_donhang'];
+                    $ten_nn = $_POST['ten_nn'];
+                    $sdt_nn = $_POST['sdt_nn'];
+                    $diachi_nn = $_POST['diachi_nn'];
+                    $trang_thai = $_POST['status'];
+                    $hinhthuc_tt = $_POST['hinhthuc_tt'];
+                    $ngay_tao = $_POST['ngay_tao'];
+                    updatehd($id_hoadon, $idkh, $ma_donhang, $ten_nn, $sdt_nn,$diachi_nn, $trang_thai, $hinhthuc_tt,$ngay_tao);
+               
+            }$list_hoadon = load_bill($id_khachhang);
+            include "lichsudathang/lichsudathang.php";
+            break;
             case 'binhluan': 
                 if (isset($_POST["addbinhluan"]) && ($_POST["addbinhluan"])) {
                     $id_khachhang = $_POST["id_khachhang1"];
@@ -236,8 +255,21 @@
                 include "dangky/dangky.php";
                 break;
         case 'lichsudathang':
+            if(isset($_SESSION['tai_khoan'])){
+                extract($_SESSION['tai_khoan']);
+            $list_hoadon = load_bill($id_khachhang);
+        }
                 include "lichsudathang/lichsudathang.php";
                 break;
+        case 'hoadonct':
+            if (isset($_GET['id_hoadon']) && $_GET['id_hoadon'] > 0) {
+                $idhdd = $_GET['id_hoadon'];
+            } else {
+                $idhdd = 0;
+            }
+            $list_hoadon_ct = load_bill_ct( $idhdd);
+            include "lichsudathang/hoadonct.php";
+            break;
         case 'thoat':
             session_unset();
                 header('Location: index.php');

@@ -32,3 +32,50 @@
     }
 ?>
 
+<?php
+
+
+    function load_bill($id_khachhang) {
+        $sql = "SELECT
+                    hoa_don.id_hoadon as idOrder,
+                    hoa_don.id_khachhang,
+                    hoa_don.ma_donhang,
+                    hoa_don.ten_nn,
+                    hoa_don.sdt_nn,
+                    hoa_don.diachi_nn,
+                    hoa_don.trang_thai,
+                    hoa_don.hinhthuc_tt,
+                    hoa_don.ngay_tao,
+                    chi_tiet_hoa_don.id_cthoadon,
+                    chi_tiet_hoa_don.id_hoadon,
+                    chi_tiet_hoa_don.id_sanpham,
+                    chi_tiet_hoa_don.soluong,
+                    chi_tiet_hoa_don.tong_hd
+                FROM 
+                    `hoa_don`
+                JOIN
+                    chi_tiet_hoa_don ON hoa_don.id_hoadon = chi_tiet_hoa_don.id_hoadon
+                WHERE
+                    hoa_don.id_khachhang = ?
+                GROUP BY
+                    hoa_don.id_hoadon
+                ORDER BY hoa_don.id_hoadon DESC
+                ";
+        return pdo_query($sql,$id_khachhang);
+    }
+
+
+function load_bill_ct($id_hoadon=0){
+    $sql="SELECT chi_tiet_hoa_don.*, sanpham.ten_sp , sanpham.img_thumbnail
+    FROM chi_tiet_hoa_don
+    INNER JOIN sanpham ON chi_tiet_hoa_don.id_sanpham = sanpham.id_sanpham
+    WHERE 1"; 
+    if($id_hoadon>0){
+        $sql.=" and id_hoadon ='".$id_hoadon."'";
+    }
+    $sql.=" order by id_sanpham desc";
+    $listhd=pdo_query($sql);
+    return $listhd;
+
+    }
+?>

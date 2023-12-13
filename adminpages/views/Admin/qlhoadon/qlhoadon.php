@@ -51,11 +51,6 @@
                   <?php
                   foreach ($hoadon as $kq) {
                     extract($kq);
-                    if($trang_thai == 0){
-                      $trang_thai = "Chưa thanh toán";
-                    }else{
-                      $trang_thai = "Đã Thanh toán";
-                    }
                     $suahd = "index.php?act=suahd&id_hoadon=" . $id_hoadon;
                     $xoahd = "index.php?act=xoahd&id_hoadon=" . $id_hoadon;
                     $cthd = "index.php?act=htcthoadon&id_hoadon=" . $id_hoadon;
@@ -65,9 +60,88 @@
                     <td>' . $ma_donhang. '</td>
                     <td>' . $ten_nn. '</td>
                     <td>' . $sdt_nn. '</td>
-                    <td>' . $diachi_nn . '</td>
-                    <td>' . $trang_thai . '</td>
-                    <td>' . $hinhthuc_tt . '</td>
+                    <td>' . $diachi_nn . '</td>';
+                    if($trang_thai==0){
+                      echo'<td>';?>
+                      <form action="index.php?act=updatehd" method="POST">
+                      <input type="hidden" name="id_hoadon" value="<?php echo $id_hoadon ?>">
+                      <input type="hidden" name="id_kh" value="<?php echo $id_khachhang ?>">
+                      <input type="hidden" name="ma_donhang" value="<?php echo $ma_donhang ?>">
+                      <input type="hidden" name="ten_nn" value="<?php echo $ten_nn ?>">
+                      <input type="hidden" name="sdt_nn" value="<?php echo $sdt_nn ?>">
+                      <input type="hidden" name="diachi_nn" value="<?php echo $diachi_nn ?>">
+                      <input type="hidden" name="status" value="1">
+                      <input type="hidden" name="hinhthuc_tt" value="<?php echo $hinhthuc_tt ?>">
+                      <input type="hidden" name="ngay_tao" value="<?php echo $ngay_tao ?>">
+                      <input type="submit"  name="sua" value="Xác nhận">
+                      </form>
+                     <?php echo'</td>';
+                    }else if($trang_thai==1){ 
+                      echo'<td>';?>
+                      <form action="index.php?act=updatehd" method="POST">
+                      <input type="hidden" name="id_hoadon" value="<?php echo $id_hoadon ?>">
+                      <input type="hidden" name="id_kh" value="<?php echo $id_khachhang ?>">
+                      <input type="hidden" name="ma_donhang" value="<?php echo $ma_donhang ?>">
+                      <input type="hidden" name="ten_nn" value="<?php echo $ten_nn ?>">
+                      <input type="hidden" name="sdt_nn" value="<?php echo $sdt_nn ?>">
+                      <input type="hidden" name="diachi_nn" value="<?php echo $diachi_nn ?>">
+                      <input type="hidden" name="status" value="2">
+                      <input type="hidden" name="hinhthuc_tt" value="<?php echo $hinhthuc_tt ?>">
+                      <input type="hidden" name="ngay_tao" value="<?php echo $ngay_tao ?>">
+                      <input type="submit"  name="sua" value="Gói hàng xong">
+                      </form>
+                    <?php echo'</td>'; 
+                    }else if($trang_thai==2){ 
+                      echo'<td>';?>
+                      <form action="index.php?act=updatehd" method="POST">
+                      <input type="hidden" name="id_hoadon" value="<?php echo $id_hoadon ?>">
+                      <input type="hidden" name="id_kh" value="<?php echo $id_khachhang ?>">
+                      <input type="hidden" name="ma_donhang" value="<?php echo $ma_donhang ?>">
+                      <input type="hidden" name="ten_nn" value="<?php echo $ten_nn ?>">
+                      <input type="hidden" name="sdt_nn" value="<?php echo $sdt_nn ?>">
+                      <input type="hidden" name="diachi_nn" value="<?php echo $diachi_nn ?>">
+                      <input type="hidden" name="status" value="3">
+                      <input type="hidden" name="hinhthuc_tt" value="<?php echo $hinhthuc_tt ?>">
+                      <input type="hidden" name="ngay_tao" value="<?php echo $ngay_tao ?>">
+                      <input type="submit"  name="sua" value="Đơn hàng đã nhập kho">
+                      </form>
+                    <?php echo'</td>'; 
+                    }else if($trang_thai==3){ 
+                      echo'<td>';?>
+                      <form action="index.php?act=updatehd" method="POST">
+                      <input type="hidden" name="id_hoadon" value="<?php echo $id_hoadon ?>">
+                      <input type="hidden" name="id_kh" value="<?php echo $id_khachhang ?>">
+                      <input type="hidden" name="ma_donhang" value="<?php echo $ma_donhang ?>">
+                      <input type="hidden" name="ten_nn" value="<?php echo $ten_nn ?>">
+                      <input type="hidden" name="sdt_nn" value="<?php echo $sdt_nn ?>">
+                      <input type="hidden" name="diachi_nn" value="<?php echo $diachi_nn ?>">
+                      <input type="hidden" name="status" value="4">
+                      <input type="hidden" name="hinhthuc_tt" value="<?php echo $hinhthuc_tt ?>">
+                      <input type="hidden" name="ngay_tao" value="<?php echo $ngay_tao ?>">
+                      <input type="submit"  name="sua" value="Đơn hàng đang giao">
+                      </form>
+                    <?php echo'</td>'; 
+                    }else if($trang_thai==4){ 
+                      echo'<td>';?>
+                      <form action="index.php?act=updatehd" method="POST">
+                      <input type="hidden" name="id_hoadon" value="<?php echo $id_hoadon ?>">
+                      <input type="hidden" name="id_kh" value="<?php echo $id_khachhang ?>">
+                      <input type="hidden" name="ma_donhang" value="<?php echo $ma_donhang ?>">
+                      <input type="hidden" name="ten_nn" value="<?php echo $ten_nn ?>">
+                      <input type="hidden" name="sdt_nn" value="<?php echo $sdt_nn ?>">
+                      <input type="hidden" name="diachi_nn" value="<?php echo $diachi_nn ?>">
+                      <input type="hidden" name="status" value="5">
+                      <input type="hidden" name="hinhthuc_tt" value="<?php echo $hinhthuc_tt ?>">
+                      <input type="hidden" name="ngay_tao" value="<?php echo $ngay_tao ?>">
+                      <input type="submit"  name="sua" value="Đơn hàng đã giao đến nơi">
+                      </form>
+                    <?php echo'</td>'; 
+                    }else if($trang_thai==5){ 
+                      echo'<td>Đang chờ nhận hàng</td>';
+                    }else if($trang_thai==6){ 
+                      echo'<td>Giao hàng thành công</td>';
+                    }
+                    echo'<td>' . $hinhthuc_tt . '</td>
                     <td>' . $ngay_tao . '</td>
                     <td >
                     <div style="display:flex;">
