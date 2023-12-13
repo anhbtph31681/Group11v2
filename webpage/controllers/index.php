@@ -11,11 +11,12 @@
     include "../model/user/thanhtoan.php";
     include "../model/user/baiviet.php";
     include "../model/user/lienhe.php";
+    include "../model/user/binhluan.php";
     $list_danh_muc = loadAll_danh_muc();
     $sphome1=loadAll_san_pham();
     $sphot=loadAll_hot();
     $all_tt = loadAll_tt();
-
+    $list_binhluan= loadAll_binhluan();
     // $userID = $_SESSION['tai_khoan'] ?? 0;
     // $user = loadOne_tt($userID);
    
@@ -23,6 +24,19 @@
     if (isset($_GET['act'])){
         $act = $_GET['act'];
         switch ($act){
+            case 'binhluan': 
+                if (isset($_POST["addbinhluan"]) && ($_POST["addbinhluan"])) {
+                    $id_khachhang = $_POST["id_khachhang1"];
+                    $id_sanpham = $_POST["id_sanpham1"];
+                    $noi_dung = $_POST["noi_dung1"];
+                    $diem = $_POST["diem"];
+                    $trang_thai = $_POST["trang_thai1"];
+                    addbinhluan($id_khachhang,$id_sanpham, $noi_dung,$diem,$trang_thai);
+                }
+                $list_binhluan= loadAll_binhluan();
+                $onesp=loadone_sanpham($id_sanpham);
+                include "ctsanpham/ctsanpham.php";
+                break;
             case 'formbaiviet': 
                 $dsbv = loadAll_bai_viet();
                 include "baiviet/baiviet.php";
@@ -50,9 +64,14 @@
             case 'ctsanpham':
                 if(isset($_GET['id_sanpham'])){
                     $id_sanpham =$_GET['id_sanpham'];
-                    $onesp=loadone_sanpham($id_sanpham);// load one thoi k can load all
+                    $onesp=loadone_sanpham($id_sanpham);
                 }
-                
+                if (isset($_GET['id_sanpham']) && $_GET['id_sanpham'] > 0) {
+                    $idsp = $_GET['id_sanpham'];
+                } else {
+                    $idsp = 0;
+                }
+                $list_binhluan= loadAll_binhluan($idsp);
                 include "ctsanpham/ctsanpham.php";
                 break;  
             case 'sanpham':
@@ -193,23 +212,31 @@
                 //     include "sanpham/sanpham.php";
                 //     break; 
         case 'dangky':
-                if (isset($_POST['dangky']) && ($_POST['dangky'])) {
-                    $ten_dang_nhap = $_POST['username'];
-                    $mat_khau = $_POST['password'];
-                    $ho_ten = $_POST['name'];
-                    $ngay_sinh = $_POST['ngaysinh'];
-                    $sdt = $_POST['sdt'];
-                    $email = $_POST['email'];
-                    $diachi = $_POST['diachi'];
+            if (isset($_POST['dangky']) && ($_POST['dangky'])) {
+                $ten_dang_nhap = $_POST['username'];
+                $mat_khau = $_POST['password'];
+                $ho_ten = $_POST['name'];
+                $ngay_sinh = $_POST['ngaysinh'];
+                $sdt = $_POST['sdt'];
+                $email = $_POST['email'];
+                $diachi = $_POST['diachi'];
+            
+                // Kiểm tra xem tên người dùng đã tồn tại hay chưa
+                if (check_existing_username($ten_dang_nhap)) {
+                    echo '<script>alert("Tên đăng nhập đã tồn tại. Vui lòng chọn tên đăng nhập khác.");</script>';
+                } else {
+                    // Nếu tên người dùng chưa tồn tại, thêm vào cơ sở dữ liệu
                     insert_nguoidung($ten_dang_nhap, $mat_khau, $ho_ten, $ngay_sinh, $sdt, $email, $diachi);
-                    echo $thongbao = '<script>alert("Đăng ký tài khoản thành công");</script>';
+                    echo '<script>alert("Đăng ký tài khoản thành công");</script>';
                 }
-               
-                include "dangnhap/dangnhap.php";
-                $thongbao = '<script>alert("Đăng ký tài khoản thành công");</script>';
-                break;
+            }
+            
+            include "dangnhap/dangnhap.php";
         case 'formdk':
                 include "dangky/dangky.php";
+                break;
+        case 'lichsudathang':
+                include "lichsudathang/lichsudathang.php";
                 break;
         case 'thoat':
             session_unset();

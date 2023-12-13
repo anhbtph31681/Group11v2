@@ -94,12 +94,7 @@
                            </textarea>
                          </div>
                        </div>
-
-                         <input  class="button add-cart" type="submit" name="submitcontact" value="Gửi">
-';
-                     ?>
-                   
-                      
+                         <input  class="button add-cart" type="submit" name="submitcontact" value="Gửi">';?>  
                     </form>
                   </div>
                 </div>

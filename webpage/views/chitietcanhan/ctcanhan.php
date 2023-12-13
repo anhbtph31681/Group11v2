@@ -28,6 +28,31 @@
     text-align: left;
 }
 
+.button-container {
+    margin-top: 20px;
+}
+
+.button-container input[type="submit"] {
+    padding: 10px 20px;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 10px;
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.button-container input[type="submit"]:hover {
+    background-color: #2980b9;
+}
+
+.button-container a {
+    text-decoration: none;
+}
+
+
 </style>
 
 <div class="page-index">
@@ -74,7 +99,7 @@
                         <div class="item">'.$ngay_sinh.'</div>
                     </div>
                     </div>
-                    <div>
+                    <div class="button-container">
                     <a href="'.$suatt.'"><input type="submit" name="sua" value="Cập nhật thông tin"></a>
                     <input type="submit" value="Đổi mật khẩu">
                   </div>

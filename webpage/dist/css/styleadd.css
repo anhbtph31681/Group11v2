@@ -1,0 +1,53 @@
+.dropdown1 {
+    width:60%;
+    position: absolute;
+    list-style: none;
+}
+
+.menulinkvip {
+    display: none;
+    position: relative;
+    background-color: #fff;
+    padding: 0;
+    margin: 0;
+    border: 1px solid #ccc;
+    z-index: 2;
+    border-radius: 5px;
+}
+
+.menulinkvip li {
+    display: block;
+    margin-top: 5px;
+    
+}
+
+.dropdown1:hover .menulinkvip {
+    display: block;
+}
+
+.menulinkvip li a span{
+    text-decoration: none;
+    color: #333;
+    display: block;
+}
+
+.menulinkvip li a span:hover {
+    color: #ff0000; 
+    border-bottom: 1px solid black;
+}
+
+.usermenuu{
+    padding-top: 15px;
+    padding-left: 110px;
+}
+
+
+.usermenuu li a{
+    display:flex;
+    padding-left: 22px;
+    color: #fff;
+}
+
+.usermenuu li a.log{background: url(../images/loginbg.png) left top no-repeat;}
+.usermenuu li a.reg{background: url(../images/regbg.png) left top no-repeat;}
+

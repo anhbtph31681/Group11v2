@@ -11,8 +11,14 @@
       <link rel="stylesheet" href="css/flexslider.css" type="text/css" media="screen"/>
       <link href="../dist/css/sequence-looptheme.css" rel="stylesheet" media="all"/>
       <link href="../dist/css/style.css" rel="stylesheet">
+      <link href="../dist/css/styleadd.css" rel="stylesheet">
       <link href="../dist/css/danhmuc.css" rel="stylesheet">
       <!--[if lt IE 9]><script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script><script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script><![endif]-->
+      <style>
+
+
+
+      </style>  
    </head>
    <body id="home">
       <div class="wrapper">
@@ -46,22 +52,30 @@
                               </ul>
                            </div>
                            <div class="col-md-3">
-                           <ul class="usermenu" style="display:flex;">
+                           <ul class="usermenuu" style="display:flex;">
                            <?php
                               if (isset($_SESSION['tai_khoan'])) {
                                 extract($_SESSION['tai_khoan']);
                            ?>
-                              <div><li><a href="?act=ctcanhan" class="log">Xin chào : <?=$ten_dang_nhap?></a></li></div>
-                              <div style="margin-left:10px;"><li><a href="index.php?act=thoat" class="log">Đăng xuất</a></li></div>
-                           <?php
-                              if(isset($chuc_vu) && $chuc_vu == 1) { ?>
-                              <li><a href="../../adminpages/views/Admin" class="log">ADMIN</a></li>
-                           <?php }
-                              } else { ?>
+                              <div>
+                                 <li class="dropdown1">
+                                    <a href="#" class="log">Xin chào : <?=$ten_dang_nhap?></a>
+                                          <ul class="menulinkvip">
+                                             <li><a href="?act=ctcanhan" ><span>Thông tin cá nhân</span></a></li>
+                                             <li><a href="?act=lichsudathang"><span>Đơn hàng</span></a></li>
+                                             <li><a href="index.php?act=thoat"><span>Đăng xuất</span></a></li>
+                                             <?php
+                                                if(isset($chuc_vu) && $chuc_vu == 1) { ?>
+                                                <li><a href="../../adminpages/views/Admin" class="log"><span>ADMIN</span></a></li>
+                                             <?php } ?>
+                                          </ul>
+                                 </li>
+                              </div>
+                              <?php } else { ?>
                               <li><a href="index.php?act=formdn" class="log">Đăng nhập</a></li>
                               <li><a href="checkout2.html" class="reg"></a></li>
                            <?php } ?>
-                              </ul>
+                           </ul>
                            </div>
                         </div>
                      </div>
@@ -109,21 +123,15 @@
                                           <?php
                                           foreach ($list_danh_muc as $list) {
                                                 extract($list);
-                                                echo '<li><a href="?act=sanpham&kyw='.$id_danhmuc.'">'. $ten_danh_muc .'</a></li>';
+                                                echo '<li>
+                                                <a style="font-weight:bold;" href="?act=sanpham&id_danhmuc='.$id_danhmuc.'">
+                                                    '. $ten_danh_muc .'
+                                                </a>
+                                              </li>';
                                           }
                                           ?>
                                           </ul>
                                        </div>
-                                       <!-- <div class="col-md-6 col-sm-6">
-                                          <ul class="mega-menu-links">
-                                             <li><a href="productgird.html">New Collection</a></li>
-                                             <li><a href="productgird.html">Shirts & tops</a></li>
-                                             <li><a href="productgird.html">Laptop & Brie</a></li>
-                                             <li><a href="productgird.html">Dresses</a></li>
-                                             <li><a href="productgird.html">Blazers & Jackets</a></li>
-                                             <li><a href="productgird.html">Shoulder Bags</a></li>
-                                          </ul>
-                                       </div> -->
                                     </div>
                                  </div>
                               </li>

@@ -7,3 +7,9 @@ pdo_execute($sql);
 }
 
 ?>
+<?php
+function check_existing_username( $username) {
+    $sql = "SELECT * FROM nguoi_dung Where ten_dang_nhap='$username'  ";
+    $tk = pdo_query_one($sql);
+    return $tk;
+}?>
