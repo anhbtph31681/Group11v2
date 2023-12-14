@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html>screen
 <html>
    <head>
       <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
@@ -26,7 +26,7 @@
             <div class="container">
                <div class="row">
                   <div class="col-md-2 col-sm-2">
-                     <div class="logo"><a href="index.php"><img src="../dist/images/logo.png" alt="FlatShop"></a></div>
+                     <div class="logo"><a href="index.php"><img src="../dist/images/logoo.png" alt="FlatShop"></a></div>
                   </div>
                   <div class="col-md-10 col-sm-10">
                      <div class="header_top">

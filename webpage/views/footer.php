@@ -3,29 +3,29 @@
                <div class="container">
                   <div class="row">
                      <div class="col-md-3">
-                        <div class="footer-logo"><a href="#"><img src="../dist/images/logo.png" alt=""></a></div>
+                        <div class="footer-logo"><a href="#"><img src="../dist/images/logoo.png" alt=""></a></div>
                      </div>
                      <div class="col-md-3 col-sm-6">
-                        <h4 class="title">Contact <strong>Info</strong></h4>
-                        <p>No. 08, Nguyen Trai, Hanoi , Vietnam</p>
-                        <p>Call Us : (084) 1900 1008</p>
-                        <p>Email : michael@leebros.us</p>
+                        <h4 class="title">Thông tin<strong>liên hệ</strong></h4>
+                        <p>Cao đẳng FPT POLYTECHNIC, Hanoi, Vietnam</p>
+                        <p>Liên hệ : (084) 93 668 2236</p>
+                        <p>Email : contact.flatshop@gmail.com</p>
                      </div>
                      <div class="col-md-3 col-sm-6">
-                        <h4 class="title">Customer<strong> Support</strong></h4>
+                        <h4 class="title">Hỗ trợ<strong> khách hàng</strong></h4>
                         <ul class="support">
-                           <li><a href="#">FAQ</a></li>
-                           <li><a href="#">Payment Option</a></li>
-                           <li><a href="#">Booking Tips</a></li>
-                           <li><a href="#">Infomation</a></li>
+                           <li><a href="#">Câu hỏi thường gặp</a></li>
+                           <li><a href="#">Phương thức thanh toán</a></li>
+                           <li><a href="#">Mẹo mua hàng</a></li>
+                           <li><a href="#">Thông tin</a></li>
                         </ul>
                      </div>
                      <div class="col-md-3">
-                        <h4 class="title">Get Our <strong>Newsletter </strong></h4>
-                        <p>Lorem ipsum dolor ipsum dolor.</p>
+                        <h4 class="title">Bản tin <strong>của chúng tôi</strong></h4>
+                        <p>Để lại email của bạn.</p>
                         <form class="newsletter">
-							<input type="text" name="" placeholder="Type your email....">
-							<input type="submit" value="SignUp" class="button">
+							<input type="text" name="" placeholder="Email của bạn....">
+							<input type="submit" value="Gửi Đi" class="button">
 						</form>
                      </div>
                   </div>
