@@ -145,9 +145,15 @@
                     <td>' . $ngay_tao . '</td>
                     <td >
                     <div style="display:flex;">
-                    <a href="'.$suahd.'"><input type="button" class="button" value="Sửa"></a>  
-                    <a href="'.$xoahd.'"><input type="button" class="button" value="Xóa"></a>
-                    </div>
+                    <a href="'.$suahd.'"><input type="button" class="button" value="Sửa"></a>'?>  
+                    <?php if($trang_thai==6 or $trang_thai==5 or $trang_thai==3 or $trang_thai==4){
+                      
+                    }else{
+                      echo '<a href="'.$xoahd.'"><input type="button" class="button" value="Xóa"></a>';
+                    }
+                    ?>
+                    
+                    <?php echo'</div>
                     <a  href="'.$cthd.'"><input type="submit"  name="sua" value="Chi tiết"></a>
                     </td>
                 </tr>';
